@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send("Welcome to Search4");
+    res.send("Welcome to Pantri");
 });
 
 app.use("/user", userController);
