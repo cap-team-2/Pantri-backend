@@ -1,6 +1,6 @@
 const express = require("express");
 const orders = express.Router();
-const { getAllOrders, getOrders, createOrders, updateOrders, deleteOrders} = require("../queries/orders.js");
+const { getAllOrders, getOrder, createOrder, updateOrder, deleteOrder} = require("../queries/orders.js");
 
 orders.get("/", async (req, res) => {
     const allOrders = await getAllOrders();
@@ -13,7 +13,7 @@ orders.get("/", async (req, res) => {
 
 orders.get("/:id", async (req, res) => {
     const {id} = req.params;
-    const orders = await getOrders(id);
+    const orders = await getOrder(id);
     if (orders) {
         res.status(200).json(orders);
     } else {
@@ -23,7 +23,7 @@ orders.get("/:id", async (req, res) => {
 
 orders.post("/", async (req, res) =>{
     try {
-        const orders = await createOrders(req.body);
+        const orders = await createOrder(req.body);
         res.status(200).json(orders);
     } catch (error) {
         res.status(400).json({ error: error})
@@ -32,15 +32,15 @@ orders.post("/", async (req, res) =>{
 
 orders.put("/:id", async (req, res) => {
     const {id} = req.params;
-    const updatedOrders = await updateOrders(id, req.body);
-    res.status(200).json(updatedOrders);
+    const updatedOrder = await updateOrder(id, req.body);
+    res.status(200).json(updatedOrder);
 });
 
 orders.delete("/:id", async(req, res) => {
     const {id} = req.params;
-    const deletedOrders = await deleteOrders(id)
-    if (deletedOrders.id) {
-        res.status(200).json(deletedOrders);
+    const deletedOrder = await deleteOrder(id)
+    if (deletedOrder.id) {
+        res.status(200).json(deletedOrder);
     } else {
         res.status(404).json("Order Not Found!")
     };
