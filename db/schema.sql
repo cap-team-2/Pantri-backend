@@ -28,3 +28,16 @@ CREATE TABLE user (
 --     product_description TEXT,
 --     product_stock INTEGER NOT NULL CHECK (product_stock >= 0),
 -- );
+
+-- CREATE TABLE orders (
+--     order_id SERIAL PRIMARY KEY, 
+--     user_id INTEGER NOT NULL REFERENCES user(id),
+--     order_placed_at TEXT NOT NULL,
+-- ); 
+
+-- CREATE TABLE orders_products (
+--     orders_products SERIAL PRIMARY KEY, 
+--     order_id INTEGER NOT NULL REFERENCES orders(id),
+--     product_id INTEGER NOT NULL REFERENCES product(id),
+--     quantity INTEGER NOT NULL,
+-- );
