@@ -1,11 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const userController = require("./controllers/userController.js");
-const productController = require("./controllers/productController.js");
-const orderController = require("./controllers/orderController.js");
-const ordersProductsController = require("./controllers/orderProductController.js")
-const userOrderController = require("./controllers/userOrderController.js");
+const userController = require("./controllers/usersController.js");
+const productController = require("./controllers/productsController.js");
+const orderController = require("./controllers/ordersController.js");
+const ordersProductsController = require("./controllers/ordersProductsController.js")
+const userOrderController = require("./controllers/userOrdersController.js");
 
 app.use(cors());
 app.use(express.json());

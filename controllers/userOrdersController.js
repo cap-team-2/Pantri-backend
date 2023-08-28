@@ -1,20 +1,20 @@
 const express = require("express");
-const userOrder = express.Router();
-const { getAllUserOrder, getUserOrder, createUserOrder, updateUserOrder, deleteUserOrder} = require("../queries/userOrders");
-const { deleteUser } = require("../queries/users");
+const userOrders = express.Router();
+const { getAllUserOrders, getUserOrder, createUserOrder, updateUserOrder, deleteUserOrder} = require("../queries/userOrders");
+// const { deleteUser } = require("../queries/users"); Do we need this here? -jn
 
-userOrder.get("/", async (req, res) => {
-    const allUserOrder = await getAllUserOrder();
-    if (allUserOrder[0]) {
-        res.status(200).json(allUserOrder);
+userOrders.get("/", async (req, res) => {
+    const allUserOrders = await getAllUserOrders();
+    if (allUserOrders[0]) {
+        res.status(200).json(allUserOrders);
     } else {
         res.status(500).json({ error: "Server Error" });
     };
 });
 
-userOrder.get("/:id", async (req, res) => {
+userOrders.get("/:id", async (req, res) => {
     const {id} = req.params;
-    const userOrder = await getUserOrder();
+    const userOrder = await getUserOrder(id);
     if (userOrder) {
         res.status(200).json(userOrder);
     } else {
@@ -22,13 +22,13 @@ userOrder.get("/:id", async (req, res) => {
     };
 });
 
-userOrder.put("/:id", async (req, res) => {
+userOrders.put("/:id", async (req, res) => {
     const {id} = req.params;
     const updatedUserOrder = await updateUserOrder(id, req.body);
     res.status(200).json(updatedUserOrder);
 });
 
-userOrder.delete("/:id", async (req, res) => {
+userOrders.delete("/:id", async (req, res) => {
     const {id} = req.params;
     const deletedUserOrder = await deleteUserOrder(id);
     if (deletedUserOrder.id) {
@@ -38,4 +38,4 @@ userOrder.delete("/:id", async (req, res) => {
     };
 });
 
-module.exports = userOrder;
+module.exports = userOrders;
