@@ -1,42 +1,43 @@
 const express = require("express");
-const user = express.Router();
-const { getAllUser, getUser, createUser, updateUser, deleteUser} = require("../queries/user.js");
+const users = express.Router();
+const { getAllUsers, getUser, createUser, updateUser, deleteUser} = require("../queries/users.js");
 
-user.get("/", async (req, res) => {
-    const allUser = await getAllUser();
-    if (!allUser.error) {
-        res.status(200).json(allUser);
+users.get("/", async (req, res) => {
+    const allUsers = await getAllUsers();
+    console.log('hello', allUsers)
+    if (allUsers[0]) {
+        res.status(200).json(allUsers);
     } else {
         res.status(500).json({ error: "Server Error"});
     };
 });
 
-user.get("/:id", async (req, res) => {
+users.get("/:id", async (req, res) => {
     const {id} = req.params;
-    const cart = await getUser(id);
-    if (user) {
+    const user = await getUser(id);
+    if (users) {
         res.status(200).json(user);
     } else {
         res.status(404).json({ error: "Not Found"})
     };
 });
 
-user.post("/", async (req, res) => {
+users.post("/", async (req, res) => {
     try {
         const user = await createUser(req.body);
-        res.status(200).json(cart);
+        res.status(200).json(user);
     } catch (error) {
         res.status(400).json({ error: error });
     };
 });
 
-user.put("/:id", async (req, res) => {
+users.put("/:id", async (req, res) => {
     const {id} = req.params;
     const updatedUser = updateUser(id, req.body);
     res.status(200).json(updatedUser);
 });
 
-user.delete("/:id", async (req, res) => {
+users.delete("/:id", async (req, res) => {
     const {id} = req.params;
     const deletedUser = await deleteUser(id);
     if (deletedUser.id) {
@@ -46,4 +47,4 @@ user.delete("/:id", async (req, res) => {
     };
 });
 
-module.exports = user;
+module.exports = users;
