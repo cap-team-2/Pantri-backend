@@ -9,7 +9,16 @@ INSERT INTO users (first_name, last_name, email, phone, address_1, address_2, ci
  'address2',
  'city',
  '10206',
- 'seller');
+ 'seller'),
+ ('robbert',
+ 'canned',
+ 'robcan@email.com',
+ '1438536754',
+ 'st corner',
+ 'apt 5b',
+ 'turkey',
+ '90909',
+ 'buyer');
 
 INSERT INTO products (name, seller, image, cost, weight, unit_measurement, category, description, stock) VALUES
 ('product',
@@ -24,7 +33,11 @@ INSERT INTO products (name, seller, image, cost, weight, unit_measurement, categ
 
 INSERT INTO orders (user_id, order_placed_at) VALUES
 ('1',
-'10pm');
+'10pm'),
+('1',
+'11pm'),
+('2',
+'5pm');
 
 INSERT INTO orders_products (order_id, product_id, quantity) VALUES
 ('1',
