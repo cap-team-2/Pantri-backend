@@ -5,7 +5,7 @@ const getAllOrders = async () => {
         const allOrders = await db.any("SELECT * FROM orders");
         return allOrders;
     } catch (error) {
-        return { error: error };
+        throw  error;
     };
 };
 
@@ -14,7 +14,7 @@ const getOrders = async (id) => {
         const oneOrder = await db.oneOrNone("SELECT * FROM orders WHERE id=$1", id);
         return oneOrder;
     } catch (error) {
-        return { error: error };
+        throw  error;
     };
 };
 
@@ -26,7 +26,7 @@ const createOrders = async () => {
         );
         return newOrder;
     } catch (error) {
-        console.error(error);
+        throw  error;
     };
 };
 
@@ -38,7 +38,7 @@ const updateOrders = async (id) => {
         );
         return updatedOrders;
     } catch (error) {
-        console.error(error);
+        throw  error;
     };
 };
 
@@ -47,7 +47,7 @@ const deleteOrders = async (id) => {
         const deletedOrders = await db.one("DELETE FROM orders WHERE id=$1 RETURNING *", [id]);
         return deletedOrders;
     } catch (error) {
-        console.error(error);
+        throw  error;
     };
 };
 
