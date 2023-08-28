@@ -21,8 +21,8 @@ const getProduct = async (id) => {
 const createProduct = async () => {
     try {
         const newProduct = await db.one( 
-            "INSERT INTO products(product_seller, product_name, product_image, product_cost, product_weigth, product_unit_measurement, product_category, product_description, product_stock) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
-            [product.product_seller, product.product_name, product.product_image, product.product_cost, product.product_weigth, product.product_unit_measurement, product.product_category, product.product_description, product.product_stock]
+            "INSERT INTO products(seller, name, image, cost, weight, unit_measurement, category, description, stock) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
+            [products.seller, products.name, products.image, products.cost, products.weight, products.unit_measurement, products.category, products.description, products.stock]
         );
         return newProduct;
     } catch (error) {
@@ -33,8 +33,8 @@ const createProduct = async () => {
 const updateProduct = async (id) => {
     try {
         const updatedProduct = await db.one (
-            "UPDATE product SET product_seller=$1, product_name=$2, product_image=$3, product_cost=$4, product_weight=$5, product_unit_measurement=$6, product_category=$7, product_description=$8, product_stock=$9 WHERE id=$10 RETURNING *",
-            [product.product_seller, product.product_name, product.product_image, product.product_cost, product.product_weigth, product.product_unit_measurement, product.product_category, product.product_description, product.product_stock, id]
+            "UPDATE products SET seller=$1, name=$2, image=$3, cost=$4, weight=$5, unit_measurement=$6, category=$7, description=$8, stock=$9 WHERE id=$10 RETURNING *",
+            [products.seller, products.name, products.image, products.cost, products.weigth, products.unit_measurement, products.category, products.description, products.stock, id]
         );
         return updatedProduct;
     } catch (error) {

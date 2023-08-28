@@ -1,10 +1,10 @@
 const express = require("express");
 const orders_products = express.Router();
-const { getAllOrderProduct, getOrderProduct, createOrderProduct, updateOrderProduct, deleteOrderProduct} = require("../queries/orderProduct.js");
+const { getAllOrdersProducts, getOrderProduct, createOrderProduct, updateOrderProduct, deleteOrderProduct} = require("../queries/ordersProducts.js");
 
 orders_products.get("/", async (req, res) => {
-    const allOrderProduct = await getAllOrderProduct();
-    if (!allOrderProduct.error) {
+    const allOrderProduct = await getAllOrdersProducts();
+    if (allOrderProduct[0]) {
         res.status(200).json(allOrderProduct);
     } else {
         res.status(500).json({ error: "Server Error "});

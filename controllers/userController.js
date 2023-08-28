@@ -5,7 +5,7 @@ const { getAllUsers, getUser, createUser, updateUser, deleteUser} = require("../
 users.get("/", async (req, res) => {
     const allUsers = await getAllUsers();
     console.log('hello', allUsers)
-    if (allUsers) {
+    if (allUsers[0]) {
         res.status(200).json(allUsers);
     } else {
         res.status(500).json({ error: "Server Error"});

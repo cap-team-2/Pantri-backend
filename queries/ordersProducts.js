@@ -1,9 +1,9 @@
 const db = require("../db/dbConfig.js");
 
-const getAllOrderProduct = async () => {
+const getAllOrdersProducts = async () => {
     try {
-        const allOrderProduct = await db.any("SELECT * FROM orders_products");
-        return allOrderProduct;
+        const allOrdersProducts = await db.any("SELECT * FROM orders_products");
+        return allOrdersProducts;
     } catch (error) {
         throw  error;
     };
@@ -52,7 +52,7 @@ const deleteOrderProduct = async (id) => {
 };
 
 module.exports = {
-    getAllOrderProduct,
+    getAllOrdersProducts,
     getOrderProduct,
     createOrderProduct,
     updateOrderProduct,

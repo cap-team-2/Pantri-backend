@@ -5,7 +5,7 @@ const { getAllProducts, getProduct, createProduct, updateProduct, deleteProduct}
 products.get("/", async (req, res) => {
     const allProducts = await getAllProducts();
     if (allProducts[0]) {
-        res.status(200).json(allProduct);
+        res.status(200).json(allProducts);
     } else {
         res.status(500).json({ error: "Server Error "});
     };

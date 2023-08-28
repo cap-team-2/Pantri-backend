@@ -5,7 +5,7 @@ const { deleteUser } = require("../queries/users");
 
 userOrder.get("/", async (req, res) => {
     const allUserOrder = await getAllUserOrder();
-    if (!allUserOrder.error) {
+    if (allUserOrder[0]) {
         res.status(200).json(allUserOrder);
     } else {
         res.status(500).json({ error: "Server Error" });

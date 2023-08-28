@@ -4,6 +4,7 @@ const app = express();
 const userController = require("./controllers/userController.js");
 const productController = require("./controllers/productController.js");
 const orderController = require("./controllers/orderController.js");
+const ordersProductsController = require("./controllers/orderProductController.js")
 const userOrderController = require("./controllers/userOrderController.js");
 
 app.use(cors());
@@ -17,7 +18,8 @@ app.get("/", (req, res) => {
 app.use("/users", userController);
 app.use("/products", productController);
 app.use("/orders", orderController);
-app.use("/userOrder", userOrderController);
+app.use("/orders-products", ordersProductsController);
+app.use("/user-order", userOrderController);
 
 app.get("*", (req, res) => {
     res.status(404).json({error: "Not Found"});
