@@ -9,16 +9,16 @@ const getAllOrders = async () => {
     };
 };
 
-const getOrders = async (id) => {
+const getOrder = async (id) => {
     try {
-        const oneOrder = await db.oneOrNone("SELECT * FROM orders WHERE id=$1", id);
-        return oneOrder;
+        const order = await db.oneOrNone("SELECT * FROM orders WHERE id=$1", id);
+        return order;
     } catch (error) {
         throw  error;
     };
 };
 
-const createOrders = async () => {
+const createOrder = async () => {
     try {
         const newOrder = await db.one( 
             "INSERT INTO orders(order_placed_at) VALUES ($1) RETURNING *",
@@ -30,22 +30,22 @@ const createOrders = async () => {
     };
 };
 
-const updateOrders = async (id) => {
+const updateOrder = async (id) => {
     try {
-        const updatedOrders = await db.one (
+        const updatedOrder = await db.one (
             "UPDATE order_placed_at=$1, RETURNING *",
             [orders.order_placed_at, id]
         );
-        return updatedOrders;
+        return updatedOrder;
     } catch (error) {
         throw  error;
     };
 };
 
-const deleteOrders = async (id) => {
+const deleteOrder = async (id) => {
     try {
-        const deletedOrders = await db.one("DELETE FROM orders WHERE id=$1 RETURNING *", [id]);
-        return deletedOrders;
+        const deletedOrder = await db.one("DELETE FROM orders WHERE id=$1 RETURNING *", [id]);
+        return deletedOrder;
     } catch (error) {
         throw  error;
     };
@@ -53,8 +53,8 @@ const deleteOrders = async (id) => {
 
 module.exports = {
     getAllOrders,
-    getOrders,
-    createOrders,
-    updateOrders,
-    deleteOrders,
+    getOrder,
+    createOrder,
+    updateOrder,
+    deleteOrder,
 };
