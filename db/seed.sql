@@ -8,7 +8,7 @@ INSERT INTO users (first_name, last_name, email, phone, address_1, address_2, ci
  'address1',
  'address2',
  'city',
- '102060',
+ '10206',
  'seller');
 
 INSERT INTO products (name, seller, image, cost, weight, unit_measurement, category, description, stock) VALUES

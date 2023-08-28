@@ -6,8 +6,9 @@ const productController = require("./controllers/productController.js");
 const orderController = require("./controllers/orderController.js");
 const userOrderController = require("./controllers/userOrderController.js");
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
+
 
 app.get("/", (req, res) => {
     res.send("Welcome to Pantri");

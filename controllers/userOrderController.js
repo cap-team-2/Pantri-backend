@@ -1,7 +1,7 @@
 const express = require("express");
 const userOrder = express.Router();
 const { getAllUserOrder, getUserOrder, createUserOrder, updateUserOrder, deleteUserOrder} = require("../queries/userOrders");
-const { deleteUser } = require("../queries/user");
+const { deleteUser } = require("../queries/users");
 
 userOrder.get("/", async (req, res) => {
     const allUserOrder = await getAllUserOrder();

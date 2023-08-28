@@ -1,17 +1,17 @@
 const express = require("express");
-const product = express.Router();
-const { getAllProduct, getProduct, createProduct, updateProduct, deleteProduct} = require("../queries/products.js");
+const products = express.Router();
+const { getAllProducts, getProduct, createProduct, updateProduct, deleteProduct} = require("../queries/products.js");
 
-product.get("/", async (req, res) => {
-    const allProduct = await getAllProduct();
-    if (!allProduct.error) {
+products.get("/", async (req, res) => {
+    const allProducts = await getAllProducts();
+    if (allProducts[0]) {
         res.status(200).json(allProduct);
     } else {
         res.status(500).json({ error: "Server Error "});
     };
 });
 
-product.get("/:id", async (req, res) => {
+products.get("/:id", async (req, res) => {
     const {id} = req.params;
     const product = await getProduct(id);
     if (product) {
@@ -21,7 +21,7 @@ product.get("/:id", async (req, res) => {
     };
 });
 
-product.post("/", async (req, res) =>{
+products.post("/", async (req, res) =>{
     try {
         const product = await createProduct(req.body);
         res.status(200).json(product);
@@ -30,13 +30,13 @@ product.post("/", async (req, res) =>{
     };
 });
 
-product.put("/:id", async (req, res) => {
+products.put("/:id", async (req, res) => {
     const {id} = req.params;
     const updatedProduct = await updateProduct(id, req.body);
     res.status(200).json(updatedProduct);
 });
 
-product.delete("/:id", async (req, res) => {
+products.delete("/:id", async (req, res) => {
     const {id} = req.params;
     const deletedProduct = await deleteProduct(id);
     if (deletedProduct.id) {
@@ -46,4 +46,4 @@ product.delete("/:id", async (req, res) => {
     };
 });
 
-module.exports = product;
+module.exports = products;

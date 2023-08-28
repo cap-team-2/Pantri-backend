@@ -1,11 +1,12 @@
 const express = require("express");
 const users = express.Router();
-const { getAllUsers, getUser, createUser, updateUser, deleteUser} = require("../queries/user.js");
+const { getAllUsers, getUser, createUser, updateUser, deleteUser} = require("../queries/users.js");
 
 users.get("/", async (req, res) => {
     const allUsers = await getAllUsers();
-    if (!allUsers.error) {
-        res.status(200).json(allUser);
+    console.log('hello', allUsers)
+    if (allUsers) {
+        res.status(200).json(allUsers);
     } else {
         res.status(500).json({ error: "Server Error"});
     };
@@ -13,7 +14,7 @@ users.get("/", async (req, res) => {
 
 users.get("/:id", async (req, res) => {
     const {id} = req.params;
-    const cart = await getUser(id);
+    const user = await getUser(id);
     if (users) {
         res.status(200).json(user);
     } else {
@@ -24,7 +25,7 @@ users.get("/:id", async (req, res) => {
 users.post("/", async (req, res) => {
     try {
         const user = await createUser(req.body);
-        res.status(200).json(cart);
+        res.status(200).json(user);
     } catch (error) {
         res.status(400).json({ error: error });
     };

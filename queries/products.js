@@ -1,9 +1,9 @@
 const db = require("../db/dbConfig.js");
 
-const getAllProduct = async () => {
+const getAllProducts = async () => {
     try {
-        const allProduct = await db.any("SELECT * FROM product");
-        return allProduct;
+        const allProducts = await db.any("SELECT * FROM products");
+        return allProducts;
     } catch (error) {
         return { error: error };
     };
@@ -11,7 +11,7 @@ const getAllProduct = async () => {
 
 const getProduct = async (id) => {
     try {
-        const oneProduct = await db.oneOrNone("SELECT * FROM product WHERE id=$1", id);
+        const oneProduct = await db.oneOrNone("SELECT * FROM products WHERE id=$1", id);
         return oneProduct;
     } catch (error) {
         return { error: error };
@@ -21,7 +21,7 @@ const getProduct = async (id) => {
 const createProduct = async () => {
     try {
         const newProduct = await db.one( 
-            "INSERT INTO product(product_seller, product_name, product_image, product_cost, product_weigth, product_unit_measurement, product_category, product_description, product_stock) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
+            "INSERT INTO products(product_seller, product_name, product_image, product_cost, product_weigth, product_unit_measurement, product_category, product_description, product_stock) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
             [product.product_seller, product.product_name, product.product_image, product.product_cost, product.product_weigth, product.product_unit_measurement, product.product_category, product.product_description, product.product_stock]
         );
         return newProduct;
@@ -52,7 +52,7 @@ const deleteProduct = async (id) => {
 };
 
 module.exports = {
-    getAllProduct,
+    getAllProducts,
     getProduct,
     createProduct,
     updateProduct,
