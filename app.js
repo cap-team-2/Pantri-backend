@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 app.use("/users", userController);
 app.use("/products", productController);
 app.use("/orders", orderController);
-app.user("/userOrder", userOrderController);
+app.use("/userOrder", userOrderController);
 
 app.get("*", (req, res) => {
     res.status(404).json({error: "Not Found"});

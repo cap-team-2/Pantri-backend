@@ -7,26 +7,26 @@ CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
-    user_email TEXT NOT NULL,
-    user_phone INTEGER,
-    user_address_1 TEXT,
-    user_address_2 TEXT,
-    user_city TEXT,
-    user_zipcode INTEGER,
-    user_type TEXT
+    email TEXT NOT NULL,
+    phone INTEGER,
+    address_1 TEXT,
+    address_2 TEXT,
+    city TEXT,
+    zipcode INTEGER,
+    type TEXT
 );
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
-    -- product_seller TEXT NOT NULL REFERENCES users (id),
-    product_name TEXT NOT NULL,
-    product_image TEXT NOT NULL,
-    product_cost DECIMAL(10,2) NOT NULL CHECK (product_cost >= 0),
-    product_weight DECIMAL(6,2) CHECK (product_weight >= 0),
-    product_unit_measurement TEXT,
-    product_category TEXT NOT NULL,
-    product_description TEXT,
-    product_stock INTEGER NOT NULL CHECK (product_stock >= 0)
+    seller INTEGER NOT NULL REFERENCES users (id),
+    name TEXT NOT NULL,
+    image TEXT NOT NULL,
+    cost DECIMAL(10,2) NOT NULL CHECK (cost >= 0),
+    weight DECIMAL(6,2) CHECK (weight >= 0),
+    unit_measurement TEXT,
+    category TEXT NOT NULL,
+    description TEXT,
+    stock INTEGER NOT NULL CHECK (stock >= 0)
 );
 
 CREATE TABLE orders (
