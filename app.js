@@ -6,6 +6,8 @@ const productController = require("./controllers/productsController.js");
 const orderController = require("./controllers/ordersController.js");
 const ordersProductsController = require("./controllers/ordersProductsController.js")
 const userOrderController = require("./controllers/userOrdersController.js");
+const sellerProductController = require("./controllers/sellerProductsController.js");
+const joinsController = require("./controllers/joinsController.js");
 
 app.use(cors());
 app.use(express.json());
@@ -20,6 +22,8 @@ app.use("/products", productController);
 app.use("/orders", orderController);
 app.use("/orders-products", ordersProductsController);
 app.use("/user-order", userOrderController);
+app.use("/seller-product", sellerProductController);
+app.use("/joins", joinsController);
 
 app.get("*", (req, res) => {
     res.status(404).json({error: "Not Found"});

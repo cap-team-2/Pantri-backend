@@ -11,8 +11,8 @@ const getAllData = async () => {
 
 const getUserWholeOrder = async (id) => {
     try {
-        const allData = await db.any("SELECT * FROM (users JOIN orders ON users.id = orders.user_id JOIN orders_products ON orders.id = orders_products.order_id JOIN products ON orders_products.product_id = products.id) WHERE users.id=$1", id);
-        return allData;
+        const allDataByUser = await db.any("SELECT * FROM (users JOIN orders ON users.id = orders.user_id JOIN orders_products ON orders.id = orders_products.order_id JOIN products ON orders_products.product_id = products.id) WHERE users.id=$1", id);
+        return allDataByUser;
     } catch (error) {
         throw error;
     };
