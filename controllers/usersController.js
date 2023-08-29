@@ -15,7 +15,7 @@ users.get("/", async (req, res) => {
 users.get("/:id", async (req, res) => {
     const {id} = req.params;
     const user = await getUser(id);
-    if (users) {
+    if (user) {
         res.status(200).json(user);
     } else {
         res.status(404).json({ error: "Not Found"})
@@ -23,9 +23,9 @@ users.get("/:id", async (req, res) => {
 });
 
 users.post("/", async (req, res) => {
-    try {
-        const user = await createUser(req.body);
-        res.status(200).json(user);
+    try  {
+        const newUser = await createUser(req.body);
+        res.status(200).json(newUser);
     } catch (error) {
         res.status(400).json({ error: error });
     };
