@@ -13,9 +13,9 @@ products.get("/", async (req, res) => {
 
 products.get("/:id", async (req, res) => {
     const {id} = req.params;
-    const product = await getProduct(id);
-    if (product) {
-        res.status(200).json(product);
+    const oneProduct = await getProduct(id);
+    if (oneProduct) {
+        res.status(200).json(oneProduct);
     } else {
         res.status(404).json({ error: "Not Found" });
     };
@@ -23,8 +23,8 @@ products.get("/:id", async (req, res) => {
 
 products.post("/", async (req, res) =>{
     try {
-        const product = await createProduct(req.body);
-        res.status(200).json(product);
+        const newProduct = await createProduct(req.body);
+        res.status(200).json(newProduct);
     } catch (error) {
         res.status(400).json({ error: error})
     };
