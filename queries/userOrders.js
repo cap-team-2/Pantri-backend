@@ -11,8 +11,8 @@ const getAllUsersOrders = async () => {
 
 const getUserOrder = async (id) => {
     try {
-        const oneUserOrder = await db.one("SELECT * FROM (users JOIN orders ON users.id = orders.users_id) WHERE orders.id=$1", id);
-        return oneUserOrder;
+        const allUserOrders = await db.one("SELECT * FROM (users JOIN orders ON users.id = orders.user_id) WHERE users.id=$1", id);
+        return allUserOrders;
     } catch (error) {
         throw  error;
     };

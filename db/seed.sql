@@ -22,14 +22,23 @@ INSERT INTO users (first_name, last_name, email, phone, address_1, address_2, ci
 
 INSERT INTO products (name, seller, image, cost, weight, unit_measurement, category, description, stock) VALUES
 ('product',
-'1',
+'2',
 'image',
 '9.99',
 '10',
 'lbs',
 'veggies',
 'place holder data to see if joins / api calls work',
-'50');
+'50'),
+('bear',
+'2',
+'image',
+'4.99',
+'100',
+'oz',
+'raw meat',
+'raw bear meat',
+'15');
 
 INSERT INTO orders (user_id, order_placed_at) VALUES
 ('1',
@@ -42,5 +51,11 @@ INSERT INTO orders (user_id, order_placed_at) VALUES
 INSERT INTO orders_products (order_id, product_id, quantity) VALUES
 ('1',
 '1',
-'5');
+'5'),
+('2',
+'2',
+'4'),
+('3',
+'1',
+'7');
 
