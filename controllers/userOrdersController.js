@@ -1,7 +1,6 @@
 const express = require("express");
 const userOrders = express.Router();
 const { getAllUserOrders, getUserOrder, createUserOrder, updateUserOrder, deleteUserOrder} = require("../queries/userOrders");
-// const { deleteUser } = require("../queries/users"); Do we need this here? -jn
 
 userOrders.get("/", async (req, res) => {
     const allUserOrders = await getAllUserOrders();
