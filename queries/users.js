@@ -5,7 +5,7 @@ const getAllUsers = async () => {
         const allUsers = await db.any("SELECT * FROM users");
         return allUsers;
     } catch (error) {
-        console.log(error);
+        return {error: error};
     };
 };
 
@@ -14,7 +14,7 @@ const getUser = async (id) => {
         const user = await db.oneOrNone("SELECT * FROM users WHERE id=$1", id);
         return user;
     } catch (error) {
-        console.log(error);
+        return {error: error};
     };
 };
 
@@ -26,7 +26,7 @@ const createUser = async () => {
         );
         return newUser;
     } catch (error) {
-        console.log(error);
+        return {error: error};
     };
 };
 
@@ -38,7 +38,7 @@ const updateUser = async (id) => {
         );
         return updatedUser;
     } catch (error) {
-        console.log(error);
+        return {error: error};
     };
 };
 
@@ -47,7 +47,7 @@ const deleteUser = async (id) => {
         const deletedUser = await db.one("DELETE FROM users WHERE id=$1 RETURNING *", [id]);
         return deletedUser;
     } catch (error) {
-        console.log(error);
+        return {error: error};
     };
 };
 
