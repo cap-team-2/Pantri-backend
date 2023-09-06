@@ -13,7 +13,7 @@ joins.get("/", async (req, res) => {
 
 joins.get("/:id", async (req, res) => {
     const {id} = req.params;
-    const userData = await getUserWholeOrder();
+    const userData = await getUserWholeOrder(id);
     if (userData[0]) {
         res.status(200).json(userData);
     } else {

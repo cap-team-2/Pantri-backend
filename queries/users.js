@@ -18,6 +18,15 @@ const getUser = async (id) => {
     };
 };
 
+const getAllSellers = async () => {
+    try {
+        const allSellers = await db.any("SELECT * FROM users WHERE users.type='seller'");
+        return allSellers;
+    } catch (error) {
+        return {error: error};
+    };
+}; 
+
 const createUser = async () => {
     try {
         const newUser = await db.one(
@@ -51,10 +60,12 @@ const deleteUser = async (id) => {
     };
 };
 
+
 module.exports = {
     getAllUsers,
     getUser,
     createUser,
     updateUser,
     deleteUser,
+    getAllSellers,
 }
