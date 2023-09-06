@@ -9,7 +9,7 @@ INSERT INTO users (first_name, last_name, email, phone, address_1, address_2, ci
  'address2',
  'city',
  '10206',
- 'seller'),
+ 'buyer'),
  ('robbert',
  'canned',
  'robcan@email.com',
@@ -18,7 +18,7 @@ INSERT INTO users (first_name, last_name, email, phone, address_1, address_2, ci
  'apt 5b',
  'turkey',
  '90909',
- 'buyer');
+ 'seller');
 
 INSERT INTO products (name, seller, image, cost, weight, unit_measurement, category, description, stock) VALUES
 ('product',

@@ -4,7 +4,7 @@ const { getAllProductsBySeller } = require("../queries/sellerProducts.js");
 
 sellerProducts.get("/:id", async (req, res) => {
     const {id} = req.params;
-    const getProductsFromSeller = await getAllProductsBySeller();
+    const getProductsFromSeller = await getAllProductsBySeller(id);
     if (getProductsFromSeller[0]) {
         res.status(200).json(getProductsFromSeller);
     } else {
