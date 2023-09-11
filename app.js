@@ -2,9 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const userController = require("./controllers/usersController.js");
+const sellersController = require("./controllers/sellersController.js");
 const productsController = require("./controllers/productsController.js");
 const ordersController = require("./controllers/ordersController.js");
-const ordersProductsController = require("./controllers/ordersProductsController.js")
+const ordersProductsController = require("./controllers/ordersProductsController.js");
 const userOrdersController = require("./controllers/userOrdersController.js");
 const sellerProductsController = require("./controllers/sellerProductsController.js");
 const joinsController = require("./controllers/joinsController.js");
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users", userController);
+app.use("/sellers", sellersController);
 app.use("/products", productsController);
 app.use("/orders", ordersController);
 app.use("/orders-products", ordersProductsController);

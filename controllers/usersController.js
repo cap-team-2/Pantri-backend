@@ -1,6 +1,6 @@
 const express = require("express");
 const users = express.Router();
-const { getAllUsers, getUser, getAllSellers, createUser, updateUser, deleteUser} = require("../queries/users.js");
+const { getAllUsers, getUser, createUser, updateUser, deleteUser} = require("../queries/users.js");
 
 users.get("/", async (req, res) => {
     const allUsers = await getAllUsers();
@@ -18,15 +18,6 @@ users.get("/:id", async (req, res) => {
         res.status(200).json(user);
     } else {
         res.status(404).json({ error: "User Not Found!"})
-    };
-});
-
-users.get("/sellers", async (req, rea) => {
-    const sellers = await getAllSellers();
-    if (sellers) {
-        res.status(200).json(sellers);
-    } else {
-        res.status(404).json({ error: "Sever Error"});
     };
 });
 
