@@ -4,9 +4,10 @@ const { getAllProductsBySeller } = require("../queries/sellerProducts.js");
 
 sellerProducts.get("/:id", async (req, res) => {
     const {id} = req.params;
-    const getProductsFromSeller = await getAllProductsBySeller(id);
-    if (getProductsFromSeller[0]) {
-        res.status(200).json(getProductsFromSeller);
+    const getProductsBySeller = await getAllProductsBySeller(id);
+
+    if (getProductsBySeller) {
+        res.status(200).json(getProductsBySeller);
     } else {
         res.status(500).json({ error: error });
     };
