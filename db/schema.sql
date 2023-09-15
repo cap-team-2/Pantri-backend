@@ -9,7 +9,7 @@ CREATE TABLE users (
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
     email TEXT NOT NULL,
-    phone INTEGER,
+    phone TEXT,
     address_1 TEXT,
     address_2 TEXT,
     city TEXT,
