@@ -174,7 +174,7 @@ INSERT INTO products (id, seller_id, product_name, product_image, product_cost, 
 'duck eggs'
 '24'
 ),
-(' 3a637835-5a69-4dc5-86dc-37007ca04795',
+('3a637835-5a69-4dc5-86dc-37007ca04795',
 '9e6ef4fb-5574-4968-912a-ea28257d708e',
 'chicken eggs',
 'https://assets.wfcdn.com/im/68603822/resize-h445%5Ecompr-r85/2313/231347907/Organic+Brown+Eggs+On+Canvas+by+Dmuratsahin+Print.jpg',
@@ -336,7 +336,6 @@ INSERT INTO products (id, seller_id, product_name, product_image, product_cost, 
 'homemade cheese'
 '20',
 ),
-
 ('a80b6598-1172-49f4-b7cc-b6bf1e0245e7',
 '7671b453-1ef6-46e4-a209-1530efc291ba',
 'beef jerky',
@@ -348,7 +347,6 @@ INSERT INTO products (id, seller_id, product_name, product_image, product_cost, 
 'beef jerky pouches',
 '100'
 ),
-
 ('3545e69b-2744-40f7-bd4b-a2a931b325a0',
 '69803707-032f-4449-b981-b78fbe97dd9b',
 'short ribs',
@@ -358,8 +356,8 @@ INSERT INTO products (id, seller_id, product_name, product_image, product_cost, 
 'lbs',
 'meat',
 'beef short ribs',
-'60'),
-
+'60'
+),
 ('9317ce27-f660-452f-b144-ee7d9187dada',
 'cfb60d3d-2118-4902-b0cc-2228f2469f55',
 'turkey bacon',
@@ -370,7 +368,7 @@ INSERT INTO products (id, seller_id, product_name, product_image, product_cost, 
 'meat',
 'turkey bacon packages',
 '30'
-),
+);
 
 INSERT INTO orders (id, user_id, order_placed_at) VALUES
 ('21d70293-4ee5-4ce8-8fde-599047743451',
