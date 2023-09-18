@@ -18,4 +18,8 @@ search.get("/:key",async (req, res) => {
     res.send(filteredProducts);
 })
 
+search.get('/*', (req, res) => {
+    res.send("Product Not Found")
+})
+
 module.exports = search;
