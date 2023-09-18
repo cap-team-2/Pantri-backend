@@ -89,7 +89,7 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
 'New York',
 '14580',
 'buyer');
-INSERT INTO products (id, seller_id, product_name, product_image, product_cost, product_weight, unit_measurement, category, product_description, stock) VALUES
+INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement, category, description, stock) VALUES
 ('908adff5-351d-471e-8296-6c6e1c82b9be',
 '9e6ef4fb-5574-4968-912a-ea28257d708e',
 'product',
