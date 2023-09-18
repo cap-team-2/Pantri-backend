@@ -12,7 +12,7 @@ search.get("/:key",async (req, res) => {
             return ele.toLowerCase()
         })
 
-        return productNameArr.some((name) => name.includes(lowerCaseKey) || lowerCaseKey.includes(name));
+        return productNameArr.some((name) => name.includes(lowerCaseKey) || lowerCaseKey.includes(name)) || product.category.toLowerCase().includes(lowerCaseKey) || lowerCaseKey.includes(product.category.toLowerCase())
     }) 
 
     res.send(filteredProducts);
