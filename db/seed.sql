@@ -178,10 +178,10 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 ),
 ('0d2b71de-5721-11ee-8c99-0242ac120002',
 '9e6ef4fb-5574-4968-912a-ea28257d708e',
-'watermelon'
+'watermelon',
 'https://images.unsplash.com/photo-1632751291436-0ed76ad22f9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2978&q=80',
-'8.40'
-'7'
+'8.40',
+'7',
 'lb',
 'Fruits',
 'Whole Watermelon',
@@ -233,6 +233,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 ),
 ('1630c00b-1b0f-40c0-9729-19bda1f00531',
 '9e6ef4fb-5574-4968-912a-ea28257d708e',
+'green grapes',
 'https://images.unsplash.com/photo-1605164881986-cf242f87f711?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2948&q=80',
 '4.68',
 '2.22',
@@ -243,6 +244,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 ),
 ('94a3c367-863e-4ed2-bbf1-91e848d038c6', 
 '9e6ef4fb-5574-4968-912a-ea28257d708e',
+'black grapes',
 'https://images.unsplash.com/photo-1504868173-db962b7c3757?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80',
 '4.68',
 '2.22',
@@ -701,10 +703,10 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'meat',
 'Turkey Bacon Packages',
 '30'
-);
+),
 ('515b29c7-5647-48bf-9102-030e8fec7f2c',
 'bf83f4e0-530d-11ee-be56-0242ac120002',
-'Turkey',
+'turkey',
 'https://www.realsimple.com/thmb/8Vfov7k1dfir5JJ3tQVS-SOijWw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/when-to-buy-a-thanksgiving-turkey-realsimple-GettyImages-1042438108-067155736c7c4015bb25c3e2fc949a61.jpg',
 '30',
 '20',
@@ -723,7 +725,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'meat',
 'Fresh Whole Duck',
 '10'
-),
+);
 INSERT INTO orders (id, user_id, order_placed_at) VALUES
 ('21d70293-4ee5-4ce8-8fde-599047743451',
 '7d395d9c-76e1-4c5a-b7f5-0b708785836b',
