@@ -165,8 +165,6 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Red Cherries',
 '10'
 ),
-<<<<<<< HEAD
-=======
 ('b9f2d47d-a96b-468d-b317-f8d387467f94',
 '9e6ef4fb-5574-4968-912a-ea28257d708e',
 'strawberry',
@@ -255,7 +253,6 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Bundle Of Black Grapes',
 '50'
 ),
->>>>>>> c63f4f772ef2605aa523ad5b15204e28c474780d
 ('e50a19a9-e730-457c-b8b3-c1cdcd736718',
 '391adfb9-d5fa-4c4b-85ac-43b1a92d838b',
 'duck eggs',
@@ -706,10 +703,6 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'meat',
 'Turkey Bacon Packages',
 '30'
-<<<<<<< HEAD
-);
-
-=======
 ),
 ('515b29c7-5647-48bf-9102-030e8fec7f2c',
 'bf83f4e0-530d-11ee-be56-0242ac120002',
@@ -733,7 +726,6 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Fresh Whole Duck',
 '10'
 );
->>>>>>> c63f4f772ef2605aa523ad5b15204e28c474780d
 INSERT INTO orders (id, user_id, order_placed_at) VALUES
 ('21d70293-4ee5-4ce8-8fde-599047743451',
 '7d395d9c-76e1-4c5a-b7f5-0b708785836b',
