@@ -265,7 +265,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'oz',
 'Dairy',
 'Duck Eggs',
-'24'
+'30'
 ),
 ('3a637835-5a69-4dc5-86dc-37007ca04795',
 '9e6ef4fb-5574-4968-912a-ea28257d708e',
