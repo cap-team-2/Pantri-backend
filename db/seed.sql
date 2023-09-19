@@ -113,7 +113,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 ('ef81a5a2-b012-45e2-8754-8539c32de3b2', 
 '535c2d7e-c78b-47f3-b2c3-ab109f908dc5',
 'quail eggs',
-'https://media.istockphoto.com/id/468767896/photo/fresh-duck-hen-and-quail-eggs.jpg?s=612x612&w=is&k=20&c=KT2I87CS49hu5izaVcFuuT4l6yQECEaIOi_3NLJw3Z0=',
+'https://images.unsplash.com/photo-1574081153185-5431608fd510?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2963&q=80',
 '23.25',
 '1',
 'lb',
