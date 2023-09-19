@@ -512,7 +512,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80',
 '0.98',
 '1',
-'lb'
+'lb',
 'veggies',
 'Bunch of Carrots With Stems',
 '30'
