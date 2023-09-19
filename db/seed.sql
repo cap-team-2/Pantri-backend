@@ -725,7 +725,18 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'meat',
 'Fresh Whole Duck',
 '10'
-);
+),
+ ('ebf667da-ed97-4ee3-9410-901a36c9d481',
+ 'bf83f4e0-530d-11ee-be56-0242ac120002',
+ 'cornish hen',
+ 'https://cdn7.bigcommerce.com/s-kloz71qit7/images/stencil/1280x1280/products/701/588/Cornish_Hen_0584fc-1600x1200__98575.1505783330.jpg?c=2&imbypass=on&imbypass=on',
+ '8',
+ '2',
+ 'lb',
+ 'meat',
+ 'Fresh Whole Cornish Hen',
+ '12'
+ );
 INSERT INTO orders (id, user_id, order_placed_at) VALUES
 ('21d70293-4ee5-4ce8-8fde-599047743451',
 '7d395d9c-76e1-4c5a-b7f5-0b708785836b',
