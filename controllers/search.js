@@ -1,24 +1,34 @@
 const express = require("express");
 const search = express.Router();
-const { getAllProducts } = require("../queries/products.js")
+// const { getAllProducts } = require("../queries/products.js")
+const { getAllProductsWithMatchingName } = require("../queries/products");
 
-search.get("/:key",async (req, res) => {
-    const { key } = req.params
-    let data = await getAllProducts();
-    const lowerCaseKey = key.toLowerCase();
-    const filteredProducts = data.filter((product) => {
-        const productName= product.name.split(' ');
-        const productNameArr = productName.map((ele) => {
-            return ele.toLowerCase()
-        })
+// **Change key to query; data to searchResults
+search.get("/:key", async (req, res) => {
+  const { key } = req.params;
 
-        return productNameArr.some((name) => name.includes(lowerCaseKey) || lowerCaseKey.includes(name));
-    }) 
+  // send query with search term
+  const productsBySearchTerm = await getAllProductsWithMatchingName(key);
 
-    res.send(filteredProducts);
-})
+  // const products = await getAllProducts();
+  // const lowerCaseKey = key.toLowerCase();
+  // const filteredProducts = products.filter((product) => {
+  //     const productName = product.name.split(' ');
+  //     const productNameArr = productName.map((ele) => {
+  //         return ele.toLowerCase()
+  //     })
 
-search.get('/*', (req, res) => { res.status(404)
-})
+  //     return productNameArr.some((name) => name.includes(lowerCaseKey) || lowerCaseKey.includes(name));
+
+  //     // return productName.toLowerCase().includes(key);
+  // })
+
+  // res.send(filteredProducts);
+  res.send(productsBySearchTerm);
+});
+
+search.get("/*", (req, res) => {
+  res.status(404);
+});
 
 module.exports = search;

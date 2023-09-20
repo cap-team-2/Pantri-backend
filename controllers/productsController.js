@@ -1,9 +1,9 @@
 const express = require("express");
 const products = express.Router();
-const { getAllProducts, getProduct, createProduct, updateProduct, deleteProduct} = require("../queries/products.js");
+const { getProducts, getProduct, createProduct, updateProduct, deleteProduct} = require("../queries/products.js");
 
 products.get("/", async (req, res) => {
-    const allProducts = await getAllProducts();
+    const allProducts = await getProducts();
     if (allProducts[0]) {
         res.status(200).json(allProducts);
     } else {
@@ -11,15 +11,25 @@ products.get("/", async (req, res) => {
     };
 });
 
-products.get("/:id", async (req, res) => {
-    const {id} = req.params;
-    const oneProduct = await getProduct(id);
-    if (oneProduct) {
-        res.status(200).json(oneProduct);
+products.get("/:query", async (req, res) => {
+    const { query } = req.params;
+    const results = await getProducts(query);
+    if (results) {
+        res.status(200).json(results);
     } else {
-        res.status(404).json({ error: "Not Found" });
-    };
+        res.status(404).json({ error: "Not Found"});
+    }
 });
+
+// products.get("/:id", async (req, res) => {
+//     const { id } = req.params;
+//     const oneProduct = await getProduct(id);
+//     if (oneProduct) {
+//         res.status(200).json(oneProduct);
+//     } else {
+//         res.status(404).json({ error: "Not Found" });
+//     };
+// });
 
 products.post("/", async (req, res) =>{
     try {
