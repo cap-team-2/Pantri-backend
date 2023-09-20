@@ -7,7 +7,7 @@ const getAllProducts = async () => {
     } catch (error) {
         return {error: error};
     };
-};
+}; 
 
 const getProduct = async (id) => {
     try {
