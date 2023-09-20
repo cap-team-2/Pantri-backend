@@ -34,14 +34,6 @@ search.get("/vegan",async (req, res) => {
     res.send(filteredProducts);
 });
 
-search.get("/:vegan/dairy",async (req, res) => {
-    const {key} = req.params;
-    // const {id} = req.params;
-    let data = await getAllProducts();
-    const filteredProducts = data.filter((product) => product.category.includes("vegan") && product.category.includes("dairy "));
-    res.send(filteredProducts);
-});
-
 // search.get("/seller:key",async (req, res) => {
 //     const {key} = req.params;
 //     let data = await getAllProducts();
