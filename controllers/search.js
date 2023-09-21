@@ -3,10 +3,22 @@ const search = express.Router();
 const { getAllProducts } = require("../queries/products.js")
 
 search.get("/:key",async (req, res) => {
-    const {key} = req.params;
+    const { key } = req.params
     let data = await getAllProducts();
-    const filteredProducts = data.filter((product) => product.name.includes(key));
+    const lowerCaseKey = key.toLowerCase();
+    const filteredProducts = data.filter((product) => {
+        const productName= product.name.split(' ');
+        const productNameArr = productName.map((ele) => {
+            return ele.toLowerCase()
+        })
+
+        return productNameArr.some((name) => name.includes(lowerCaseKey) || lowerCaseKey.includes(name));
+    }) 
+
     res.send(filteredProducts);
+})
+
+search.get('/*', (req, res) => { res.status(404)
 })
 
 module.exports = search;

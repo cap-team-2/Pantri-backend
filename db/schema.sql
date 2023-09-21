@@ -9,7 +9,7 @@ CREATE TABLE users (
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
     email TEXT NOT NULL,
-    phone INTEGER,
+    phone TEXT,
     address_1 TEXT,
     address_2 TEXT,
     city TEXT,
@@ -20,13 +20,13 @@ CREATE TABLE users (
 CREATE TABLE products (
     id UUID PRIMARY KEY,
     seller_id UUID NOT NULL REFERENCES users (id),
-    product_name TEXT NOT NULL,
-    product_image TEXT NOT NULL,
-    product_cost DECIMAL(10,2) NOT NULL CHECK (product_cost >= 0),
-    product_weight DECIMAL(6,2) CHECK (product_weight >= 0),
+    name TEXT NOT NULL,
+    image TEXT NOT NULL,
+    cost DECIMAL(10,2) NOT NULL CHECK (cost >= 0),
+    weight DECIMAL(6,2) CHECK (weight >= 0),
     unit_measurement TEXT,
     category TEXT NOT NULL,
-    product_description TEXT,
+    description TEXT,
     stock INTEGER NOT NULL CHECK (stock >= 0)
 );
 
