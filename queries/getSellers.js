@@ -9,6 +9,16 @@ const getAllSellers = async () => {
     };
 }; 
 
+const getSeller = async (id) => {
+    try {
+        const getSeller = await db.one("SELECT * FROM users WHERE id=$1 AND type=$2", [id, users.type]);
+        return getSeller;
+    } catch (error) {
+        return {error: error};
+    };
+};
+
 module.exports = {
-    getAllSellers
-}
+    getAllSellers, 
+    getSeller
+};
