@@ -2,27 +2,21 @@ const db = require("../db/dbConfig.js");
 
 // getProducts to getProducts
 const getProducts = async (query = undefined) => {
+
   try {
     let queryString = "SELECT * FROM products";
     let values = [];
     if (query) {
-      queryString += "WHERE name LIKE '$1%'";
-      values.add(query);
+      queryString += " WHERE name ILIKE $1";
+      values.push(`%${query}%`);
     }
     const results = await db.query(queryString, values);
     return results;
-  } catch(error) {
-    return { error: 'Not Found' };
+  } catch (error) {
+    console.error("Error while executing the query:", error);
+    return { error: "An error occurred while fetching the products." };
   }
-  
-  // let queryStr2 = `SELECT * FROM products
-  //   ${query && `WHERE column LIKE ${query}`}`;
-  // try {
-  //   const allProducts = await db.any("SELECT * FROM products");
-  //   return allProducts;
-  // } catch (error) {
-  //   return { error: error };
-  // }
+
 };
 
 const getProduct = async (id) => {
@@ -96,31 +90,10 @@ const deleteProduct = async (id) => {
   }
 };
 
-// const getAllProductsWithMatchingName = async (searchTerm) => {
-//   try {
-//     // const sqlSearchTerm = `%${searchTerm}%`;
-
-//     let baseQuery = "SELECT * FROM products"
-
-//     if(searchTerm){
-//         baseQuery += 'WHERE name LIKE %' + searchTerm + '%';
-//     }
-    
-//     const productsBySearchTerm = await db.any(
-//       "SELECT * FROM products WHERE name LIKE $1",
-//       [sqlSearchTerm]
-//     );
-//     return productsBySearchTerm;
-//   } catch (error) {
-//     return { error };
-//   }
-// };
-
 module.exports = {
   getProducts,
   getProduct,
   createProduct,
   updateProduct,
   deleteProduct,
-  // getAllProductsWithMatchingName,
 };
