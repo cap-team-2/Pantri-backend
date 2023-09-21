@@ -3,16 +3,15 @@ const products = express.Router();
 const { getProducts, getProduct, createProduct, updateProduct, deleteProduct} = require("../queries/products.js");
 
 products.get("/", async (req, res) => {
-    const { query } = req.query;
-    const allProducts = await getProducts(query);
+    console.log(req.query)
+    const { q } = req.query;
+    const results = await getProducts(q)
 
-     if (allProducts.error) {
-       res.status(500).json({ error: "Server Error" });
-     } else if (products.length === 0) {
-       res.status(404).json({ error: "No Products Found" });
-     } else {
-       res.status(200).json(allProducts);
-     }
+    if (results.length) {
+        res.status(200).json(results)
+    } else {
+        res.status(404).json({ error: "No Products Found"})
+    }
 });
 
 products.get("/:id", async (req, res) => {
