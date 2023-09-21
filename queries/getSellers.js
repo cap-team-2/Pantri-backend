@@ -11,8 +11,8 @@ const getAllSellers = async () => {
 
 const getSeller = async (id) => {
     try {
-        const getSeller = await db.one("SELECT * FROM users WHERE id=$1 AND type=$2", [id, users.type]);
-        return getSeller;
+        const sellers = await db.any("SELECT * FROM users WHERE users.type='seller' AND id=$1", id);
+        return sellers;
     } catch (error) {
         return {error: error};
     };
