@@ -11,7 +11,7 @@ sellers.get("/", async (req, res) => {
     };
 });
 
-sellers.get("/id", async (req, res) => {
+sellers.get("/sellers/:id", async (req, res) => {
     const { id } = req.params
     
     const sellers = await getSeller(id);
