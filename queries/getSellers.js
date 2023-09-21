@@ -8,6 +8,7 @@ const getAllSellers = async () => {
         return {error: error};
     };
 }; 
+
 const getSeller = async (id) => {
     try {
         const sellers = await db.any("SELECT * FROM users WHERE users.type='seller' AND id=$1", id);
@@ -15,9 +16,9 @@ const getSeller = async (id) => {
     } catch (error) {
         return {error: error};
     };
-}; 
+};
 
 module.exports = {
-    getAllSellers,
+    getAllSellers, 
     getSeller
-}
+};

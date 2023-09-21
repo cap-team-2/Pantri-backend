@@ -1,44 +1,34 @@
 const express = require("express");
 const search = express.Router();
-const { getAllProducts } = require("../queries/products.js")
+// const { getAllProducts } = require("../queries/products.js")
+const { getAllProductsWithMatchingName } = require("../queries/products");
 
-search.get("/dairy/:key",async (req, res) => {
-    const {key} = req.params;
-    // const {id} = req.params;
-    let data = await getAllProducts();
-    const filteredProducts = data.filter((product) => product.name.includes(key) && product.category.includes("dairy"));
-    res.send(filteredProducts);
+// **Change key to query; data to searchResults
+search.get("/:key", async (req, res) => {
+  const { key } = req.params;
+
+  // send query with search term
+  const productsBySearchTerm = await getAllProductsWithMatchingName(key);
+
+  // const products = await getAllProducts();
+  // const lowerCaseKey = key.toLowerCase();
+  // const filteredProducts = products.filter((product) => {
+  //     const productName = product.name.split(' ');
+  //     const productNameArr = productName.map((ele) => {
+  //         return ele.toLowerCase()
+  //     })
+
+  //     return productNameArr.some((name) => name.includes(lowerCaseKey) || lowerCaseKey.includes(name));
+
+  //     // return productName.toLowerCase().includes(key);
+  // })
+
+  // res.send(filteredProducts);
+  res.send(productsBySearchTerm);
 });
 
-search.get("/meat/:key",async (req, res) => {
-    const {key} = req.params;
-    // const {id} = req.params;
-    let data = await getAllProducts();
-    const filteredProducts = data.filter((product) => product.name.includes(key) && product.category.includes("meat"));
-    res.send(filteredProducts);
+search.get("/*", (req, res) => {
+  res.status(404);
 });
-
-search.get("/dairy",async (req, res) => {
-    const {key} = req.params;
-    // const {id} = req.params;
-    let data = await getAllProducts();
-    const filteredProducts = data.filter((product) => product.category.includes("dairy"));
-    res.send(filteredProducts);
-});
-
-search.get("/vegan",async (req, res) => {
-    const {key} = req.params;
-    // const {id} = req.params;
-    let data = await getAllProducts();
-    const filteredProducts = data.filter((product) => product.category.includes("vegan"));
-    res.send(filteredProducts);
-});
-
-// search.get("/seller:key",async (req, res) => {
-//     const {key} = req.params;
-//     let data = await getAllProducts();
-//     const filteredProducts = data.filter((product) => product.seller.includes(key));
-//     res.send(filteredProducts);
-// })
 
 module.exports = search;
