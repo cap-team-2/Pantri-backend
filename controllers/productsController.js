@@ -11,7 +11,7 @@ products.get("/", async (req, res) => {
      } else if (products.length === 0) {
        res.status(404).json({ error: "No Products Found" });
      } else {
-       res.status(200).json(products);
+       res.status(200).json(allProducts);
      }
 });
 
