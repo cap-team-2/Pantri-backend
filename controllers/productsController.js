@@ -3,7 +3,6 @@ const products = express.Router();
 const { getProducts, getProduct, createProduct, updateProduct, deleteProduct} = require("../queries/products.js");
 
 products.get("/", async (req, res) => {
-    console.log(req.query)
     const { q } = req.query;
     const results = await getProducts(q)
 
