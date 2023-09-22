@@ -19,11 +19,11 @@ const getUser = async (id) => {
 };
 
 
-const createUser = async () => {
+const createUser = async (user) => {
     try {
         const newUser = await db.one(
             "INSERT INTO users(first_name, last_name, email, phone, address_1, address_2, city, zipcode, type) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
-            [users.first_name, users.last_name, users.email, users.phone, users.address_1, users.address_2, users.city, users.zipcode, users.type]
+            [user.first_name, user.last_name, user.email, user.phone, user.address_1, user.address_2, user.city, user.zipcode, user.type]
         );
         return newUser;
     } catch (error) {
