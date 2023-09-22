@@ -2,10 +2,11 @@ DROP DATABASE IF EXISTS capstone_dev;
 CREATE DATABASE capstone_dev;
 
 \c capstone_dev;
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 
 CREATE TABLE users (
-    id UUID PRIMARY KEY,
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
     email TEXT NOT NULL,
