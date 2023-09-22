@@ -15,6 +15,7 @@ CREATE TABLE users (
     address_2 TEXT,
     city TEXT,
     zipcode INTEGER,
+    image TEXT NOT NULL,
     type TEXT
 );
 

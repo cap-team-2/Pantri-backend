@@ -1,7 +1,7 @@
 \c capstone_dev;
 
 
-INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2, city, zipcode, type) VALUES
+INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2, city, zipcode, image, type) VALUES
 ('7d395d9c-76e1-4c5a-b7f5-0b708785836b',
  'Emily',
  'Jones',
@@ -22,7 +22,8 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
  'apt 5b',
  'turkey',
  '90909',
- 'seller'
+ 'seller',
+ 'https://cdn.create.vista.com/api/media/small/427413244/stock-photo-harvesting-curly-cabbage-in-green-field'
  ),
  ('7710079e-a564-44f2-b6b6-1b2b3882a6ef',
  'Billy',
@@ -44,7 +45,8 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
  '',
  'New York',
  '10002',
- 'seller'
+ 'seller',
+ 'https://media.istockphoto.com/id/934919462/photo/proud-african-american-gardener-posing-for-portrait.webp?b=1&s=170667a&w=0&k=20&c=DfZSI9hUgPH9tok7112p8HaWBKIYhKA0-8tj7WUrIB0='
  ),
  ('391adfb9-d5fa-4c4b-85ac-43b1a92d838b',
  'Ricardo',
@@ -55,7 +57,8 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
  '',
  'New York',
  '10032',
- 'seller'
+ 'seller',
+ 'https://media.istockphoto.com/id/1294834650/photo/portrait-of-senior-farm-worker.jpg?s=612x612&w=0&k=20&c=zDXkcEeWq_CWzG9yEIIEBSP1hm1VGYdIdJZDeKi2vWg='
  ),
  ('022378ae-b1c0-4750-9320-29ed9c653a4d',
  'Christopher',
@@ -77,7 +80,8 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
 '',
 'Florida',
 '32127',
-'seller'
+'seller',
+'https://st4.depositphotos.com/1170412/20659/i/450/depositphotos_206599026-stock-photo-beatiful-asian-woman-smile-rubber.jpg'
 ),
 ('7142ef7c-5310-11ee-be56-0242ac120002',
 'Crystal',
@@ -98,7 +102,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '2',
 'lb',
 'veggies',
-'Artichoke',
+'Jerusalem Artichoke',
 '50'),
 ('479a1150-a3f3-43f6-89e7-142e8b6943e6',
 '9e6ef4fb-5574-4968-912a-ea28257d708e',
@@ -113,7 +117,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 ('ef81a5a2-b012-45e2-8754-8539c32de3b2', 
 '535c2d7e-c78b-47f3-b2c3-ab109f908dc5',
 'quail eggs',
-'https://images.unsplash.com/photo-1574081153185-5431608fd510?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2963&q=80',
+'https://jacobsheritagefarm.com/wp-content/uploads/2014/08/bigstock-Quail-Eggs-On-Wooden-Backgroun-59882948.jpg',
 '23.25',
 '1',
 'lb',
