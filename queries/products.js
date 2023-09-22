@@ -16,7 +16,23 @@ const getProducts = async (query = undefined) => {
     console.error("Error while executing the query:", error);
     return { error: "An error occurred while fetching the products." };
   }
+};
 
+const filterProducts = async (query = undefined) => {
+
+  try {
+    let queryString = "SELECT * FROM products";
+    let values = [];
+    if (query) {
+      queryString += " WHERE category ILIKE $1";
+      values.push(`%${query}%`);
+    }
+    const results = await db.query(queryString, values);
+    return results;
+  } catch (error) {
+    console.error("Error while executing the query:", error);
+    return { error: "An error occurred while fetching the products." };
+  }
 };
 
 const getProduct = async (id) => {
@@ -31,22 +47,22 @@ const getProduct = async (id) => {
   }
 };
 
-const createProduct = async (productData) => {
+const createProduct = async (product) => {
   //
   try {
     const newProduct = await db.one(
       "INSERT INTO products(id, seller_id, name, image, cost, weight, unit_measurement, category, description, stock) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
       [
-        products.id,
-        products.seller_id,
-        products.name,
-        products.image,
-        products.cost,
-        products.weight,
-        products.unit_measurement,
-        products.category,
-        products.description,
-        products.stock,
+        product.id,
+        product.seller_id,
+        product.name,
+        product.image,
+        product.cost,
+        product.weight,
+        product.unit_measurement,
+        product.category,
+        product.description,
+        product.stock,
       ]
     );
     return newProduct;
@@ -92,6 +108,7 @@ const deleteProduct = async (id) => {
 
 module.exports = {
   getProducts,
+  filterProducts,
   getProduct,
   createProduct,
   updateProduct,
