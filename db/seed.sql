@@ -11,6 +11,7 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
  '',
  'New York',
  '10206',
+ '',
  'buyer'
  ),
  ('9e6ef4fb-5574-4968-912a-ea28257d708e',
@@ -34,6 +35,7 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
  '',
  'Kansas City',
  '64121',
+ '',
  'buyer'
  ),
  ('535c2d7e-c78b-47f3-b2c3-ab109f908dc5',
@@ -69,6 +71,7 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
  '',
  'New York',
  '10032',
+ '',
  'buyer'
  ),
 ('bf83f4e0-530d-11ee-be56-0242ac120002',
@@ -92,6 +95,7 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
 '',
 'New York',
 '14580',
+'',
 'buyer' 
 ),
 ('08b42780-59a2-11ee-8c99-0242ac120002',
@@ -116,7 +120,7 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
 'New York',
  '22601',
  'https://burmancoffee.com/wp-content/uploads/2018/01/cafe-kreyol-organic-coffee-farmers-Dominican-Republic-Ramirez-Estate-01.jpg',
- 'seller',
+ 'seller'
 );
 INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement, category, description, stock) VALUES
 ('908adff5-351d-471e-8296-6c6e1c82b9be',
@@ -767,7 +771,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
  '12'
  ), 
  ('21b26024-59a4-11ee-8c99-0242ac120002',
-  '08b42780-59a2-11ee-8c99-0242ac120002',
+  'bf83f4e0-530d-11ee-be56-0242ac120002',
   'romaine lettuce',
   'https://bonnieplants.com/cdn/shop/products/060721_T110854_201997_202120_Bonnie_RomaineLettuce_ALT_01.jpg?v=1653420386',
   '2.19',
@@ -775,7 +779,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
   'lb',
   'veggies',
   'Crispy Crunchy Green Romaine Lettuce',
-  '100',
+  '100'
  );
 INSERT INTO orders (id, user_id, order_placed_at) VALUES
 ('21d70293-4ee5-4ce8-8fde-599047743451',
