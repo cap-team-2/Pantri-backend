@@ -9,7 +9,7 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
  '9145567776',
  '602 14th street',
  '',
- 'new york',
+ 'New York',
  '10206',
  'buyer'
  ),
@@ -20,7 +20,7 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
  '1438536754',
  '11 St Corner',
  'apt 5b',
- 'turkey',
+ 'Turkey',
  '90909',
  'https://cdn.create.vista.com/api/media/small/427413244/stock-photo-harvesting-curly-cabbage-in-green-field',
  'seller'
@@ -92,7 +92,30 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
 '',
 'New York',
 '14580',
-'buyer');
+'buyer' 
+),
+('08b42780-59a2-11ee-8c99-0242ac120002',
+'Mya',
+'Eckert',
+'myeker@gmail.com',
+'3488871231',
+'775 N. Amerige Street',
+'',
+'New York',
+'14127',
+'seller' 
+),
+('055038a8-59a3-11ee-8c99-0242ac120002',
+'Bob',
+'Da Builder',
+'bobdabuil@aol.com',
+'4247973491',
+'8924 La Sierra Rd',
+'',
+'New York',
+ '22601',
+ 'seller',
+);
 INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement, category, description, stock) VALUES
 ('908adff5-351d-471e-8296-6c6e1c82b9be',
 '9e6ef4fb-5574-4968-912a-ea28257d708e',
@@ -740,6 +763,17 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
  'meat',
  'Fresh Whole Cornish Hen',
  '12'
+ ), 
+ ('21b26024-59a4-11ee-8c99-0242ac120002',
+  '08b42780-59a2-11ee-8c99-0242ac120002',
+  'romaine lettuce',
+  'https://bonnieplants.com/cdn/shop/products/060721_T110854_201997_202120_Bonnie_RomaineLettuce_ALT_01.jpg?v=1653420386',
+  '2.19',
+  '1.5',
+  'lb',
+  'veggies',
+  'Crispy Crunchy Green Romaine Lettuce',
+  '100',
  );
 INSERT INTO orders (id, user_id, order_placed_at) VALUES
 ('21d70293-4ee5-4ce8-8fde-599047743451',
