@@ -103,6 +103,7 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
 '',
 'New York',
 '14127',
+'https://www.cam.ac.uk/sites/www.cam.ac.uk/files/styles/content-885x432/public/news/research/features/251017indian-farmer-in-biharm.defreesecimmyt.jpg?itok=l61sULc4',
 'seller' 
 ),
 ('055038a8-59a3-11ee-8c99-0242ac120002',
@@ -114,6 +115,7 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
 '',
 'New York',
  '22601',
+ 'https://burmancoffee.com/wp-content/uploads/2018/01/cafe-kreyol-organic-coffee-farmers-Dominican-Republic-Ramirez-Estate-01.jpg',
  'seller',
 );
 INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement, category, description, stock) VALUES
