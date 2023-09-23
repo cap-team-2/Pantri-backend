@@ -12,7 +12,7 @@ products.get("/", async (req, res) => {
     }
 });
 
-products.get("/", async (req, res) => {
+products.get("/filter", async (req, res) => {
     const { q } = req.query;
     const results = await filterProducts(q)
     if (results.length) {
