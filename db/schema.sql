@@ -20,7 +20,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE products (
-    id UUID PRIMARY KEY,
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     seller_id UUID NOT NULL REFERENCES users (id),
     name TEXT NOT NULL,
     image TEXT NOT NULL,
@@ -33,14 +33,28 @@ CREATE TABLE products (
 );
 
 CREATE TABLE orders (
-    id UUID PRIMARY KEY, 
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY, 
     user_id UUID NOT NULL REFERENCES users (id),
     order_placed_at TEXT NOT NULL
 ); 
 
 CREATE TABLE orders_products (
-    id UUID PRIMARY KEY, 
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY, 
     order_id UUID NOT NULL REFERENCES orders(id),
+    product_id UUID NOT NULL REFERENCES products(id),
+    quantity INTEGER NOT NULL CHECK (quantity >= 0)
+);
+
+CREATE TAbLE shopping_session (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    user_id UUID NOT NULL REFERENCES shopping_session(id),
+    total DECIMAL(10,2) NOT NULL CHECK (total >= 0),
+    created_at TEXT NOT NULL
+);
+
+CREATE TABLE cart_products (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    session_id UUID NOT NULL REFERENCES shopping_session(id),
     product_id UUID NOT NULL REFERENCES products(id),
     quantity INTEGER NOT NULL CHECK (quantity >= 0)
 );

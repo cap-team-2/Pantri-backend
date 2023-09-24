@@ -9,3 +9,7 @@ const getAllOrdersOrdersProducts = async () => {
     };
 };
 
+module.exports = {
+    getAllOrdersOrdersProducts
+  };
+

@@ -18,7 +18,7 @@ const getOrder = async (id) => {
     };
 };
 
-const createOrder = async () => {
+const createOrder = async (orders) => {
     try {
         const newOrder = await db.one( 
             "INSERT INTO orders(order_placed_at) VALUES ($1) RETURNING *",
@@ -30,7 +30,7 @@ const createOrder = async () => {
     };
 };
 
-const updateOrder = async (id) => {
+const updateOrder = async (id, orders) => {
     try {
         const updatedOrder = await db.one (
             "UPDATE order_placed_at=$1, RETURNING *",
