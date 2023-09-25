@@ -1,22 +1,38 @@
 const db = require("../db/dbConfig.js");
 
-// getProducts to getProducts
-const getProducts = async (query = undefined) => {
 
+const getProducts = async ({ q, category, cost }) => {
   try {
     let queryString = "SELECT * FROM products";
     let values = [];
-    if (query) {
-      queryString += " WHERE name ILIKE $1";
-      values.push(`%${query}%`);
+    let conditions = [];
+
+    if (q) {
+      conditions.push(`name ILIKE $${conditions.length + 1}`);
+      values.push(`%${q}%`);
     }
+
+    if (category) {
+      conditions.push(`category ILIKE $${conditions.length + 1}`);
+      values.push(`%${category}%`);
+    }
+
+    if (cost) {
+      conditions.push(`cost <= $${conditions.length + 1}`);
+      values.push(parseFloat(cost));
+    }
+
+    if (conditions.length > 0) {
+      queryString += " WHERE " + conditions.join(" AND ");
+    }
+    
+
     const results = await db.query(queryString, values);
     return results;
   } catch (error) {
     console.error("Error while executing the query:", error);
     return { error: "An error occurred while fetching the products." };
   }
-
 };
 
 const getProduct = async (id) => {
