@@ -31,11 +31,11 @@ const createUser = async (user) => {
     };
 };
 
-const updateUser = async (id) => {
+const updateUser = async (id, users) => {
     try {
         const updatedUser = await db.one(
             "UPDATE users SET first_name=$1, last_name=$2, email=$3, phone=$4, address_1=$5, address_2=$5, city=$6, zipcode=$7, type=$8"
-            [users.first_name, users.last_name, users.email, users.phone, users.address_1, users.address_2, users.city, users.zipcode, users.type]
+            [users.first_name, users.last_name, users.email, users.phone, users.address_1, users.address_2, users.city, users.zipcode, users.type, id]
         );
         return updatedUser;
     } catch (error) {
