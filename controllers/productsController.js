@@ -4,8 +4,8 @@ const { getProducts, getProduct, createProduct, updateProduct, deleteProduct} = 
 
 
 products.get("/", async (req, res) => {
-  const { search, q } = req.query;
-  const results = await getProducts({ search, q });
+  const { q, category, cost } = req.query;
+  const results = await getProducts({ q, category, cost });
   if (results.length) {
     res.status(200).json(results);
   } else {

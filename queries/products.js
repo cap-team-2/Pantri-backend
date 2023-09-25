@@ -1,27 +1,31 @@
 const db = require("../db/dbConfig.js");
 
 
-const getProducts = async ({ search, q }) => {
+const getProducts = async ({ q, category, cost }) => {
   try {
     let queryString = "SELECT * FROM products";
     let values = [];
     let conditions = [];
 
-    if (search) {
-      if (search === "name") {
-        queryString += ` WHERE name ILIKE $1`;
-        values.push(`%${q}%`);
-      } else if (search === "category") {
-        queryString += ` WHERE category ILIKE $1`;
-        values.push(`%${q}%`);
-      } else if (search === "seller") {
-        queryString += ` WHERE seller_id = $1`;
-        values.push(`${q}`);
-      } else if (search === "cost") {
-        queryString += ` WHERE cost <= $1`;
-        values.push(`${q}`);
-      }
-  }
+    if (q) {
+      conditions.push(`name ILIKE $${conditions.length + 1}`);
+      values.push(`%${q}%`);
+    }
+
+    if (category) {
+      conditions.push(`category ILIKE $${conditions.length + 1}`);
+      values.push(`%${category}%`);
+    }
+
+    if (cost) {
+      conditions.push(`cost <= $${conditions.length + 1}`);
+      values.push(parseFloat(cost));
+    }
+
+    if (conditions.length > 0) {
+      queryString += " WHERE " + conditions.join(" AND ");
+    }
+    
 
     const results = await db.query(queryString, values);
     return results;
