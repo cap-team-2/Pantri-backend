@@ -30,12 +30,12 @@ app.use("/orders-products", ordersProductsController);
 app.use("/user-orders", userOrdersController);
 app.use("/seller-products", sellerProductsController);
 app.use("/joins", joinsController);
-app.use("/shoppingSession", shoppingSessionController);
-app.use("/cartProdctController", cartProductsController);
+app.use("/shopping-session", shoppingSessionController);
+app.use("/cart-products", cartProductsController);
 
 
 app.get("*", (req, res) => {
-    res.status(404).json({error: "Not Found"});
+    res.status(404).json({error: "Not Found!"});
 });
 
 module.exports = app;

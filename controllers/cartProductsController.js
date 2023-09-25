@@ -5,7 +5,7 @@ const { getCartProducts, getCartProduct, createCartProduct, updateCartProduct, d
 cartProducts.get("/", async (req, res) => {
     const allCartProducts = await getCartProducts();
     if (allCartProducts[0]) {
-        res.status(200).json(allCartProductss)
+        res.status(200).json(allCartProducts)
     } else {
         res.status(500).json({ error: "Sever Error" })
     };

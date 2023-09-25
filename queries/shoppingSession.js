@@ -2,8 +2,8 @@ const db = require("../db/dbConfig.js");
 
 const getAllSessions = async () => {
     try {
-        const allSessios = await db.any("SELECT * FROM shopping_session");
-        return allSessios;
+        const allSessions = await db.any("SELECT * FROM shopping_session");
+        return allSessions;
     } catch (error) {
         return {error: error};
     };
@@ -21,8 +21,8 @@ const getSession = async (id) => {
 const createSession = async (session) => {
     try {
         const newSession = await db.one( 
-            "INSERT INTO shopping_session (total, created_at) VALUES ($1, $2) RETURNING *",
-            [session.total, session.created_at]
+            "INSERT INTO shopping_session ( user_id, total, created_at) VALUES ($1, $2, $3) RETURNING *",
+            [session.user_id, session.total, session.created_at]
         );
         return newSession;
     } catch (error) {

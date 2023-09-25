@@ -35,6 +35,7 @@ CREATE TABLE products (
 CREATE TABLE orders (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY, 
     user_id UUID NOT NULL REFERENCES users (id),
+    total DECIMAL(10,2) NOT NULL CHECK (total >= 0),
     order_placed_at TEXT NOT NULL
 ); 
 
@@ -45,16 +46,16 @@ CREATE TABLE orders_products (
     quantity INTEGER NOT NULL CHECK (quantity >= 0)
 );
 
-CREATE TAbLE shopping_session (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    user_id UUID NOT NULL REFERENCES shopping_session(id),
+CREATE TABLE shopping_session (
+    id SERIAL PRIMARY KEY,
+    user_id UUID NOT NULL REFERENCES users(id),
     total DECIMAL(10,2) NOT NULL CHECK (total >= 0),
     created_at TEXT NOT NULL
 );
 
 CREATE TABLE cart_products (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    session_id UUID NOT NULL REFERENCES shopping_session(id),
+    id SERIAL PRIMARY KEY,
+    session_id INTEGER NOT NULL REFERENCES shopping_session(id),
     product_id UUID NOT NULL REFERENCES products(id),
     quantity INTEGER NOT NULL CHECK (quantity >= 0)
 );

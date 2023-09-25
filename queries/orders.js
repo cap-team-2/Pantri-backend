@@ -21,8 +21,8 @@ const getOrder = async (id) => {
 const createOrder = async (orders) => {
     try {
         const newOrder = await db.one( 
-            "INSERT INTO orders(order_placed_at) VALUES ($1) RETURNING *",
-            [orders.order_placed_at]
+            "INSERT INTO orders(total, order_placed_at) VALUES ($1, $2) RETURNING *",
+            [ total, orders.order_placed_at ]
         );
         return newOrder;
     } catch (error) {
@@ -33,8 +33,8 @@ const createOrder = async (orders) => {
 const updateOrder = async (id, orders) => {
     try {
         const updatedOrder = await db.one (
-            "UPDATE order_placed_at=$1, RETURNING *",
-            [orders.order_placed_at, id]
+            "UPDATE orders SET total=$1, order_placed_at=$2, RETURNING *",
+            [ total, orders.order_placed_at, id]
         );
         return updatedOrder;
     } catch (error) {

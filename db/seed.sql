@@ -781,15 +781,18 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
   'Crispy Crunchy Green Romaine Lettuce',
   '100'
  );
-INSERT INTO orders (id, user_id, order_placed_at) VALUES
+INSERT INTO orders (id, user_id, total, order_placed_at) VALUES
 ('21d70293-4ee5-4ce8-8fde-599047743451',
 '7d395d9c-76e1-4c5a-b7f5-0b708785836b',
+'12.00',
 '10pm'),
 ('d848d6c5-6883-4ec0-8e04-d1f6bcec7884',
 '7d395d9c-76e1-4c5a-b7f5-0b708785836b',
+'40.00',
 '11pm'),
 ('f684e1d6-225f-49c3-8ba9-306cd038f0bd',
 '9e6ef4fb-5574-4968-912a-ea28257d708e',
+'100.30',
 '5pm');
 
 INSERT INTO orders_products (id, order_id, product_id, quantity) VALUES
@@ -805,4 +808,18 @@ INSERT INTO orders_products (id, order_id, product_id, quantity) VALUES
 'f684e1d6-225f-49c3-8ba9-306cd038f0bd',
 '908adff5-351d-471e-8296-6c6e1c82b9be',
 '7');
+
+INSERT INTO shopping_session (id, user_id, total, created_at) VALUES 
+('1',
+'9e6ef4fb-5574-4968-912a-ea28257d708e',
+'120',
+'here'
+);
+
+INSERT INTO cart_products (id, session_id, product_id, quantity) VALUES
+('1',
+'1',
+'908adff5-351d-471e-8296-6c6e1c82b9be',
+'5'
+);
 

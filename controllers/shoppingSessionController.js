@@ -36,7 +36,7 @@ session.put("/:id", async (req, res) => {
     res.status(200).json(updatedSession);
 });
 
-users.delete("/:id", async (req, res) => {
+session.delete("/:id", async (req, res) => {
     const {id} = req.params;
     const deletedSession = await deleteSession(id);
     if (deletedSession.id) {

@@ -22,8 +22,8 @@ const getCartProduct = async (id) => {
 const createCartProduct = async (cartProduct) => {
     try {
         const newCartProduct = await db.one(
-            "INSERT INTO cart_products (quantity) VALUES($1) RETURNING *",
-            [ cartProduct.quantity ]
+            "INSERT INTO cart_products (session_id, product_id, quantity) VALUES($1, $2, $3) RETURNING *",
+            [ cartProduct.session_id, cartProduct.product_id, cartProduct.quantity ]
         );
         return newCartProduct;
     } catch (error) {
