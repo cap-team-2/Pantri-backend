@@ -9,7 +9,7 @@ const ordersProductsController = require("./controllers/ordersProductsController
 const userOrdersController = require("./controllers/userOrdersController.js");
 const sellerProductsController = require("./controllers/sellerProductsController.js");
 const joinsController = require("./controllers/joinsController.js");
-const search = require("./controllers/search.js");
+const searchController = require("./controllers/searchController.js");
 const shoppingSessionController = require("./controllers/shoppingSessionController.js");
 const cartProductsController = require("./controllers/cartProductsController.js");
 
@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
     res.send("Welcome to Pantri");
 });
 
-app.use("/search", search);
+app.use("/search", searchController);
 app.use("/users", userController);
 app.use("/sellers", sellersController);
 app.use("/products", productsController);
