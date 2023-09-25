@@ -130,7 +130,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '18.99',
 '2',
 'lb',
-'veggies',
+'Vegetables',
 'Jerusalem Artichoke',
 '50'),
 ('479a1150-a3f3-43f6-89e7-142e8b6943e6',
@@ -140,7 +140,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '3.86',
 '2',
 'lb',
-'veggies',
+'Vegetables',
 'Cauliflower',
 '15'),
 ('ef81a5a2-b012-45e2-8754-8539c32de3b2', 
@@ -469,7 +469,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '4.99',
 '10',
 'oz',
-'veggies',
+'Vegetables',
 'Mushroom',
 '35'
 ),
@@ -480,7 +480,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '5.29',
 '2',
 'lb',
-'veggies',
+'Vegetables',
 'Juicy Vine Tomatoes',
 '80'
 ),
@@ -491,7 +491,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '2.59',
 '1.35',
 'lb',
-'veggies',
+'Vegetables',
 'Cucumbers',
 '40'
 ),
@@ -502,7 +502,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '0.93',
 '1.48',
 'lb',
-'veggies',
+'Vegetables',
 'Zucchini',
 '40'
 ),
@@ -513,7 +513,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '1.29',
 '5.5',
 'oz',
-'veggies',
+'Vegetables',
 'Bundle of Scallions',
 '38'
 ),
@@ -524,7 +524,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '0.89',
 '18',
 'oz',
-'veggies',
+'Vegetables',
 'Corn On The Cob',
 '100'
 ),
@@ -535,7 +535,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '2.68',
 '2.8',
 'lb',
-'veggies',
+'Vegetables',
 'Orange pumpkin',
 '30'
 ),
@@ -546,7 +546,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '2.28',
 '2',
 'lb',
-'veggies',
+'Vegetables',
 'Aloe Vera Leaves',
 '10'
 ),
@@ -557,7 +557,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '4.89',
 '1',
 'lb',
-'veggies',
+'Vegetables',
 'beet roots',
 '32'
 ),
@@ -568,7 +568,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '2.98',
 '1',
 'lbs',
-'veggies',
+'Vegetables',
 'Fresh Green Cabbage',
 '20'
 ),
@@ -579,7 +579,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '5.29',
 '0.33',
 'oz',
-'veggies',
+'Vegetables',
 'Bundle Of Fresh Spinach',
 '100'
 ), 
@@ -590,7 +590,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '2.29',
 '67',
 'oz',
-'veggies',
+'Vegetables',
 'Bundle Of Fresh Kale',
 '30'
 ),
@@ -601,7 +601,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '1.49',
 '1',
 'oz',
-'veggies',
+'Vegetables',
 'Red Radish',
 '12'
 ),
@@ -612,7 +612,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '2.98',
 '1',
 'lb',
-'veggies',
+'Vegetables',
 'Red Cabbage',
 '20'
 ),
@@ -623,7 +623,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '4.25',
 '1',
 'oz',
-'veggies',
+'Vegetables',
 'Turnips',
 '20'
 ),
@@ -634,7 +634,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '0.98',
 '1',
 'lb',
-'veggies',
+'Vegetables',
 'Bunch of Carrots With Stems',
 '30'
 ),
@@ -645,7 +645,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '18.84',
 '16',
 'oz',
-'veggies',
+'Vegetables',
 'Green Bell Peppers',
 '50'
 ),
@@ -656,7 +656,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '18.84',
 '16',
 'oz',
-'veggies',
+'Vegetables',
 'Red Bell Peppers',
 '50'
 ),
@@ -667,7 +667,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '18.84',
 '16',
 'oz',
-'veggies',
+'Vegetables',
 'Yellow Bell Peppers',
 '50'
 ),
@@ -678,7 +678,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '18.84',
 '16',
 'oz',
-'veggies',
+'Vegetables',
 'Orange Bell Peppers',
 '50'
 ),
@@ -777,7 +777,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
   '2.19',
   '1.5',
   'lb',
-  'veggies',
+  'Vegetables',
   'Crispy Crunchy Green Romaine Lettuce',
   '100'
  );
