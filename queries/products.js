@@ -10,14 +10,17 @@ const getProducts = async ({ search, q }) => {
     if (search) {
       if (search === "name") {
         queryString += ` WHERE name ILIKE $1`;
+        values.push(`%${q}%`);
       } else if (search === "category") {
         queryString += ` WHERE category ILIKE $1`;
-      } else if (search === "seller_id") {
+        values.push(`%${q}%`);
+      } else if (search === "seller") {
         queryString += ` WHERE seller_id = $1`;
+        values.push(`${q}`);
       } else if (search === "cost") {
         queryString += ` WHERE cost <= $1`;
+        values.push(`${q}`);
       }
-      values.push(`%${q}%`);
   }
 
     const results = await db.query(queryString, values);
