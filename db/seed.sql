@@ -814,7 +814,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
  'Made With Succulent Peaches That You Can Enjoy All Year Round',
  '10'
  ),
-('1c5dfd5e-5cab-11ee-8c99-0242ac120002',
+('09ecc45e-0424-4531-bdf1-be0eb3e00d3c',
 '08b42780-59a2-11ee-8c99-0242ac120002',
 'cheesecake',
 'https://bromabakery.com/wp-content/uploads/2021/05/How-to-Make-The-Perfect-Cheesecake-14-1067x1600.webp',
@@ -822,7 +822,8 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '1',
 'lb',
 'desserts',
-'Homemade Cheesecake'
+'Homemade Cheesecake',
+'10'
  ),
  ('22a03262-5cac-11ee-8c99-0242ac120002', 
  '055038a8-59a3-11ee-8c99-0242ac120002',
@@ -895,8 +896,8 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'roses',
 'https://cdn.financebuzz.com/images/2023/01/20/roses.jpg',
 '10',
-'',
-'',
+'1',
+'lb',
 'flowers',
 'A Dozen Of Beautiful Red Roses',
 '12'
@@ -906,8 +907,8 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
  'sunflower',
  'https://www.instacart.com/image-server/932x932/filters:fill(FFF,true):format(webp)/www.instacart.com/assets/domains/product-image/file/large_34eeffdd-8eda-4f72-921e-3ced9e6eb30c.jpg',
  '9.89',
- '', 
- '', 
+ '1', 
+ 'lb', 
  'flowers',
  'Lovely bright yellow Sunflowers',
  '100'
@@ -917,8 +918,8 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'bouquet',
 'https://fyf.tac-cdn.net/images/products/large/FYF-893.jpg?auto=webp&quality=80&width=690',
 '34.00',
-'',
-'',
+'1',
+'lb',
 'flowers',
 'Assorted Flowers That Make Up a Bouquet',
 '20'
@@ -928,8 +929,8 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'pink roses',
 'https://www.flowerchimp.com.ph/cdn/shop/products/PH_001_600x.jpg?v=1635836591', 
 '12.99',
-'',
-'',
+'1',
+'lb',
 'flowers',
 'A Dozen Pretty Pink Roses',
 '20'
@@ -948,7 +949,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 ('c6b445b5-dd04-436e-a8bf-fb93de87e80e',
 '08b42780-59a2-11ee-8c99-0242ac120002',
 'peanutbutter cookie',
-'https://i.etsystatic.com/15925842/r/il/b25112/4107010459/il_1588xN.4107010459_3uaa.jpg'
+'https://i.etsystatic.com/15925842/r/il/b25112/4107010459/il_1588xN.4107010459_3uaa.jpg',
 '3.00',
 '16',
 'g',
@@ -992,6 +993,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 ('b0bb6139-5663-48fb-8dc6-821eb11b603c', 
 '055038a8-59a3-11ee-8c99-0242ac120002',
 'chickpea',
+'https://wholefully.com/wp-content/uploads/2011/03/img_8150-720x540.jpg',
 '1.38',
 '1',
 'lb',
@@ -1018,6 +1020,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '500',
 'g',
 'vegan',
+'Healthy Homemade Vegan Potato Chips',
 '30'
 );
 INSERT INTO orders (id, user_id, total, order_placed_at) VALUES
