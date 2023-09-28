@@ -1022,6 +1022,17 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'vegan',
 'Healthy Homemade Vegan Potato Chips',
 '30'
+),
+('53a5a82a-950d-40df-b974-e60b8b20bc21', 
+'391adfb9-d5fa-4c4b-85ac-43b1a92d838b',
+'tempeh',
+'https://www.liveeatlearn.com/wp-content/uploads/2019/01/tempeh-photo-vert.jpg',
+'4.94',
+'6',
+'oz',
+'vegan',
+'Fresh Homemade Tempeh',
+'30'
 );
 INSERT INTO orders (id, user_id, total, order_placed_at) VALUES
 ('21d70293-4ee5-4ce8-8fde-599047743451',
