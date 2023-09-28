@@ -25,8 +25,9 @@ const getProducts = async ({ q, category, cost }) => {
     if (conditions.length > 0) {
       queryString += " WHERE " + conditions.join(" AND ");
     }
-    
-    const results = await db.query(queryString, values);
+
+    const results = await db.any(queryString, values);
+
     return results;
   } catch (error) {
     console.error("Error while executing the query:", error);
