@@ -9,6 +9,16 @@ const getAllSellers = async () => {
     };
 }; 
 
+const getSeller = async (id) => {
+    try {
+        const sellers = await db.any("SELECT * FROM users WHERE users.type='seller' AND id=$1", id);
+        return sellers;
+    } catch (error) {
+        return {error: error};
+    };
+};
+
 module.exports = {
-    getAllSellers
-}
+    getAllSellers, 
+    getSeller
+};
