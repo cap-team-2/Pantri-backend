@@ -1069,7 +1069,7 @@ INSERT INTO shopping_session (id, user_id, total, created_at) VALUES
 'here'
 );
 
-INSERT INTO cart_products (id, session_id, product_id, quantity) VALUES
+INSERT INTO cart_products (cart_id, session_id, product_id, quantity) VALUES
 ('1',
 '1',
 '908adff5-351d-471e-8296-6c6e1c82b9be',
