@@ -38,8 +38,8 @@ cartProducts.put("/:id", async (req, res) => {
 
 cartProducts.delete("/:id", async (req, res) => {
     const {id} = req.params;
-    const deletedCartProduct = await deletecartProducts(id);
-    if (deletedCartProduct.id) {
+    const deletedCartProduct = await deleteCartProduct(id);
+    if (deletedCartProduct.cart_id) {
         res.status(200).json(deletedCartProduct);
     } else {
         res.status(404).json("cartProducts Was Not Found!");
