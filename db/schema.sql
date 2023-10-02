@@ -54,8 +54,8 @@ CREATE TABLE shopping_session (
 );
 
 CREATE TABLE cart_products (
-    id SERIAL PRIMARY KEY,
+    cart_id SERIAL PRIMARY KEY,
     session_id INTEGER NOT NULL REFERENCES shopping_session(id),
-    product_id UUID NOT NULL REFERENCES products(id),
+    product_id UUID NOT NULL REFERENCES products(id) UNIQUE,
     quantity INTEGER NOT NULL CHECK (quantity >= 0)
 );
