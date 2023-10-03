@@ -758,7 +758,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '4',
 'lb',
 'meat',
-'Poultry',
+'boneless chicken breasts',
 '50'
 ),
 ('6ffe66f7-3a09-469a-a160-947893411b0d',
@@ -791,9 +791,9 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '3',
 'lb',
 'meat',
-'Beef Short Ribs',
-'60'
-),
+'beef short ribs',
+'60'),
+
 ('9317ce27-f660-452f-b144-ee7d9187dada',
 'bf83f4e0-530d-11ee-be56-0242ac120002',
 'turkey bacon',
@@ -1137,7 +1137,7 @@ INSERT INTO shopping_session (id, user_id, total, created_at) VALUES
 'here'
 );
 
-INSERT INTO cart_products (id, session_id, product_id, quantity) VALUES
+INSERT INTO cart_products (cart_id, session_id, product_id, quantity) VALUES
 ('1',
 '1',
 '908adff5-351d-471e-8296-6c6e1c82b9be',

@@ -8,7 +8,7 @@ cartJoins.get("/:sessionID", async (req, res) => {
     if (cartJoins[0]) {
         res.status(200).json(cartJoins);
     } else {
-        res.status(500).json({ error: error });
+        res.status(500).json({ error: "No Products in Cart" });
     };
 });
 
