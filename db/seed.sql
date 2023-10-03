@@ -95,20 +95,6 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
 '',
 'New York',
 '14580',
-<<<<<<< HEAD
-'buyer'),
-('7d84d781-cb35-4c4d-bec9-5d4dd39b30aa',
- 'Linda',
- 'Park',
- 'ParkLinda13@email.com',
- '7188058091',
- '100-10 Main street',
- '',
- 'New York',
- '10206',
- 'buyer'),;
-INSERT INTO products (id, seller_id, product_name, product_image, product_cost, product_weight, unit_measurement, category, product_description, stock) VALUES
-=======
 '',
 'buyer' 
 ),
@@ -137,7 +123,6 @@ INSERT INTO products (id, seller_id, product_name, product_image, product_cost, 
  'seller'
 );
 INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement, category, description, stock) VALUES
->>>>>>> da550f5e1cf74839997821a822edcc04979e9ba5
 ('908adff5-351d-471e-8296-6c6e1c82b9be',
 '9e6ef4fb-5574-4968-912a-ea28257d708e',
 'sunchoke',
@@ -753,10 +738,6 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Turkey Bacon Packages',
 '30'
 ),
-<<<<<<< HEAD
-
-INSERT INTO orders (id, user_id, order_placed_at) VALUES
-=======
 ('515b29c7-5647-48bf-9102-030e8fec7f2c',
 'bf83f4e0-530d-11ee-be56-0242ac120002',
 'turkey',
@@ -1055,7 +1036,6 @@ INSERT INTO orders (id, user_id, order_placed_at) VALUES
 '30'
 );
 INSERT INTO orders (id, user_id, total, order_placed_at) VALUES
->>>>>>> da550f5e1cf74839997821a822edcc04979e9ba5
 ('21d70293-4ee5-4ce8-8fde-599047743451',
 '7d395d9c-76e1-4c5a-b7f5-0b708785836b',
 '12.00',
