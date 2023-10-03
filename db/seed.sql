@@ -690,8 +690,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '4',
 'lb',
 'meat',
-'poultry',
-'boneless '
+'boneless chicken breasts',
 '50'
 ),
 ('6ffe66f7-3a09-469a-a160-947893411b0d',
