@@ -59,3 +59,4 @@ CREATE TABLE cart_products (
     product_id UUID NOT NULL REFERENCES products(id),
     quantity INTEGER NOT NULL CHECK (quantity >= 0)
 );
+
