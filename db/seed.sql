@@ -134,17 +134,6 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'A Bunch Of Freshly Grown Parsley',
 '100'
 ),
-('32c5d798-9d25-48b3-a772-bd7c88906711',
-'055038a8-59a3-11ee-8c99-0242ac120002',
-'cilantro',
-'https://target.scene7.com/is/image/Target/GUEST_c3e1d5ce-5e49-47a0-8179-4110d9286a21?wid=1200&hei=1200&qlt=80&fmt=webp',
-'0.95',
-'2.8',
-'oz',
-'Vegetables',
-'Fresh Bunch Of Cilantro', 
-'50'
-),
 ('908adff5-351d-471e-8296-6c6e1c82b9be',
 '055038a8-59a3-11ee-8c99-0242ac120002',
 'sunchoke',
