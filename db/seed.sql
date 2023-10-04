@@ -896,7 +896,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '08b42780-59a2-11ee-8c99-0242ac120002',
 'cheesecake',
 'https://bromabakery.com/wp-content/uploads/2021/05/How-to-Make-The-Perfect-Cheesecake-14-1067x1600.webp',
-'18.00',
+'15.00',
 '2.5',
 'lb',
 'desserts',
