@@ -52,7 +52,6 @@ const deleteCartProduct = async (cart_id) => {
     };
 };
 
-
 module.exports = {
     getCartProducts,
     getCartProduct,
