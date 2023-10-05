@@ -4,11 +4,13 @@ const { getCartProducts, getCartProduct, createCartProduct, updateCartProduct, d
 
 cartProducts.get("/", async (req, res) => {
     const allCartProducts = await getCartProducts();
-    if (allCartProducts[0]) {
+    if (allCartProducts.error) {
+        res.status(500).json({ error: "Sever Error" })
+    } else if (allCartProducts[0]) {
         res.status(200).json(allCartProducts)
     } else {
-        res.status(500).json({ error: "Sever Error" })
-    };
+        res.status(404).json('No products in Cart')
+    }
 })
 
 cartProducts.get("/:id", async (req, res) => {
