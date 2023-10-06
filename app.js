@@ -13,15 +13,16 @@ const searchController = require("./controllers/searchController.js");
 const shoppingSessionController = require("./controllers/shoppingSessionController.js");
 const cartProductsController = require("./controllers/cartProductsController.js");
 const cartJoinsController = require("./controllers/cartJoinsController.js");
+const stripe = require("./controllers/stripeConfig.js");
 
 app.use(cors());
 app.use(express.json());
-
 
 app.get("/", (req, res) => {
     res.send("Welcome to Pantri");
 });
 
+app.use("/config", stripe)
 app.use("/search", searchController);
 app.use("/users", userController);
 app.use("/sellers", sellersController);
