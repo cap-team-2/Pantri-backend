@@ -1,8 +1,8 @@
 const express = require("express");
-const search = express.Router();
+const searchRouter = express.Router();
 const { searchDatabase } = require("../queries/searchQuery");
 
-search.get("/", async (req, res) => {
+searchRouter.get("/", async (req, res) => {
   try {
     const { search, filterBy, value } = req.query;
     const results = await searchDatabase({ search, filterBy, value });
@@ -19,4 +19,4 @@ search.get("/", async (req, res) => {
    
 });
 
-module.exports = search;
+module.exports = searchRouter;

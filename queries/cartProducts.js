@@ -9,9 +9,9 @@ const getCartProducts = async () => {
     };
 };
 
-const getCartProduct = async (id) => {
+const getCartProduct = async (cart_id) => {
     try {
-        const cartProduct = await db.oneOrNone("SELECT * FROM cart_products WHERE id=$1", id);
+        const cartProduct = await db.oneOrNone("SELECT * FROM cart_products WHERE cart_id=$1", cart_id);
         return cartProduct;
     } catch (error) {
         return {error: error};
@@ -31,11 +31,11 @@ const createCartProduct = async (cartProduct) => {
     };
 };
 
-const updateCartProduct = async (id, cartProduct) => {
+const updateCartProduct = async (cart_id, cartProduct) => {
     try {
         const updatedUser = await db.one(
-            "UPDATE cart_products SET quantity=$1"
-            [cartProduct.quantity, id]
+            "UPDATE cart_products SET quantity=$1 WHERE cart_id=$2 RETURNING *",
+            [cartProduct.quantity, cart_id]
         );
         return updatedUser;
     } catch (error) {
@@ -43,9 +43,9 @@ const updateCartProduct = async (id, cartProduct) => {
     };
 };
 
-const deleteCartProduct = async (id) => {
+const deleteCartProduct = async (cart_id) => {
     try {
-        const deletedUser = await db.one("DELETE FROM cart_products WHERE id=$1 RETURNING *", [id]);
+        const deletedUser = await db.one("DELETE FROM cart_products WHERE cart_id=$1 RETURNING *", [cart_id]);
         return deletedUser;
     } catch (error) {
         return {error: error};

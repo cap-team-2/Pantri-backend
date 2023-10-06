@@ -4,11 +4,13 @@ const { getCartProducts, getCartProduct, createCartProduct, updateCartProduct, d
 
 cartProducts.get("/", async (req, res) => {
     const allCartProducts = await getCartProducts();
-    if (allCartProducts[0]) {
+    if (allCartProducts.error) {
+        res.status(500).json({ error: "Sever Error" })
+    } else if (allCartProducts[0]) {
         res.status(200).json(allCartProducts)
     } else {
-        res.status(500).json({ error: "Sever Error" })
-    };
+        res.status(404).json('No products in Cart')
+    }
 })
 
 cartProducts.get("/:id", async (req, res) => {
@@ -38,8 +40,8 @@ cartProducts.put("/:id", async (req, res) => {
 
 cartProducts.delete("/:id", async (req, res) => {
     const {id} = req.params;
-    const deletedCartProduct = await deletecartProducts(id);
-    if (deletedCartProduct.id) {
+    const deletedCartProduct = await deleteCartProduct(id);
+    if (deletedCartProduct.cart_id) {
         res.status(200).json(deletedCartProduct);
     } else {
         res.status(404).json("cartProducts Was Not Found!");

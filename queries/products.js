@@ -25,9 +25,9 @@ const getProducts = async ({ q, category, cost }) => {
     if (conditions.length > 0) {
       queryString += " WHERE " + conditions.join(" AND ");
     }
-    
 
-    const results = await db.query(queryString, values);
+    const results = await db.any(queryString, values);
+
     return results;
   } catch (error) {
     console.error("Error while executing the query:", error);
@@ -48,7 +48,6 @@ const getProduct = async (id) => {
 };
 
 const createProduct = async (product) => {
-  //
   try {
     const newProduct = await db.one(
       "INSERT INTO products(id, seller_id, name, image, cost, weight, unit_measurement, category, description, stock) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
