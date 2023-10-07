@@ -1116,6 +1116,37 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Fresh Homemade Tempeh',
 '30'
 );
+INSERT INTO raitings (user_id, product_id, rating) VALUES 
+('7d395d9c-76e1-4c5a-b7f5-0b708785836b',
+'74bcb6f2-7f2b-4787-b6cc-cc0446e939d5',
+'5'
+),
+('7d395d9c-76e1-4c5a-b7f5-0b708785836b',
+'50b9f14e-1baa-43f2-9e85-b336ea03a6fe',
+'5'
+);
+INSERT INTO comments (user_id, product_id, comments) VALUES 
+('7142ef7c-5310-11ee-be56-0242ac120002',
+'74bcb6f2-7f2b-4787-b6cc-cc0446e939d5',
+'This parsely was great, I was able to get a bunch!'
+),
+('bf83f4e0-530d-11ee-be56-0242ac120002',
+'74bcb6f2-7f2b-4787-b6cc-cc0446e939d5',
+'50b9f14e-1baa-43f2-9e85-b336ea03a6fe',
+'I needed some of this for a recipe'
+),
+('7710079e-a564-44f2-b6b6-1b2b3882a6ef',
+'50b9f14e-1baa-43f2-9e85-b336ea03a6fe',
+'This is from my favorite farmer!'
+),
+('535c2d7e-c78b-47f3-b2c3-ab109f908dc5',
+'50b9f14e-1baa-43f2-9e85-b336ea03a6fe',
+'I wish I could support more offten'
+),
+('7d395d9c-76e1-4c5a-b7f5-0b708785836b',
+'74bcb6f2-7f2b-4787-b6cc-cc0446e939d5',
+'It feels nice to support local farmers'
+);
 INSERT INTO orders (id, user_id, total, order_placed_at) VALUES
 ('21d70293-4ee5-4ce8-8fde-599047743451',
 '7d395d9c-76e1-4c5a-b7f5-0b708785836b',

@@ -4,7 +4,6 @@ CREATE DATABASE capstone_dev;
 \c capstone_dev;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
-
 CREATE TABLE users (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     first_name TEXT NOT NULL,
@@ -22,6 +21,8 @@ CREATE TABLE users (
 CREATE TABLE products (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     seller_id UUID NOT NULL REFERENCES users (id),
+    -- rating UUID REFERENCES ratings (id),
+    -- comments UUID REFERENCES comments (id),
     name TEXT NOT NULL,
     image TEXT NOT NULL,
     cost DECIMAL(10,2) NOT NULL CHECK (cost >= 0),
@@ -30,6 +31,20 @@ CREATE TABLE products (
     category TEXT NOT NULL,
     description TEXT,
     stock INTEGER NOT NULL CHECK (stock >= 0)
+);
+
+CREATE TABLE ratings (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    user_id UUID NOT NULL REFERENCES users (id),
+    product_id UUID NOT NULL REFERENCES products(id),
+    rating INTEGER CHECK (rating >= 0 AND rating <= 5)
+);
+
+CREATE TABLE comments (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    user_id UUID NOT NULL REFERENCES users (id),
+    product_id UUID NOT NULL REFERENCES products(id),
+    comment TEXT
 );
 
 CREATE TABLE orders (
