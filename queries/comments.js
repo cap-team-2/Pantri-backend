@@ -1,5 +1,24 @@
 const db = require("../db/dbConfig.js");
 
+const getAllComments = async () => {
+    try {
+        const allComments = await db.any("SELECT * FROM comments");
+        return allComments;
+    } catch (error) {
+        return {error: error};
+    };
+};
+
+const getComments = async (id) => {
+    try {
+        const comment = await db.oneOrNone("SELECT * FROM comments WHERE id=$1", id);
+        return comment;
+    } catch (error) {
+        return {error: error};
+    };
+};
+
+
 const createComment = async (comment) => {
     try {
         const newComment = await db.one(
@@ -35,6 +54,8 @@ const deleteComment = async (id) => {
 
 
 module.exports = {
+    getAllComments,
+    getComments,
     createComment,
     updateComment,
     deleteComment,

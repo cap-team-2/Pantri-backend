@@ -1,6 +1,25 @@
 const express = require("express");
 const comments = express.Router();
-const { createComment, updateComment, deleteComment} = require("../queries/comments.js");
+const { getAllComments, getComments, createComment, updateComment, deleteComment} = require("../queries/comments.js");
+
+comments.get("/", async (req, res) => {
+    const allComments = await getAllComments();
+    if (allComments[0]) {
+        res.status(200).json(allComments);
+    } else {
+        res.status(500).json({ error: "Server Error"});
+    };
+});
+
+comments.get("/:id", async (req, res) => {
+    const {id} = req.params;
+    const comments = await getComments(id);
+    if (comments) {
+        res.status(200).json(comments);
+    } else {
+        res.status(404).json({ error: "User Not Found!"})
+    };
+});
 
 comments.post("/", async (req, res) => {
     try  {
