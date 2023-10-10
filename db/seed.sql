@@ -1188,3 +1188,4 @@ INSERT INTO cart_products (session_id, product_id, quantity) VALUES
 '2');
 
 
+
