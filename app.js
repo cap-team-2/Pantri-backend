@@ -13,15 +13,17 @@ const searchController = require("./controllers/searchController.js");
 const shoppingSessionController = require("./controllers/shoppingSessionController.js");
 const cartProductsController = require("./controllers/cartProductsController.js");
 const cartJoinsController = require("./controllers/cartJoinsController.js");
+const commentsController = require("./controllers/commentsController.js")
+const stripe = require("./controllers/stripeConfig.js");
 
 app.use(cors());
 app.use(express.json());
-
 
 app.get("/", (req, res) => {
     res.send("Welcome to Pantri");
 });
 
+app.use("/config", stripe)
 app.use("/search", searchController);
 app.use("/users", userController);
 app.use("/sellers", sellersController);
@@ -34,7 +36,7 @@ app.use("/joins", joinsController);
 app.use("/shopping-session", shoppingSessionController);
 app.use("/cart-products", cartProductsController);
 app.use("/cart-joins", cartJoinsController);
-
+app.use("/comments", commentsController);
 
 app.get("*", (req, res) => {
     res.status(404).json({error: "Not Found!"});
