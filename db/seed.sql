@@ -1181,5 +1181,10 @@ INSERT INTO shopping_session (id, user_id, total, created_at) VALUES
 'here'
 );
 
+INSERT INTO cart_products (session_id, product_id, quantity) VALUES
+(
+'1',
+'3ec4616e-db0a-4087-b81f-d3b91858f818',
+'2');
 
 
