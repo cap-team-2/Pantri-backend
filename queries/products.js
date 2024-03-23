@@ -1,5 +1,4 @@
-const db = require("../db/dbConfig.js");
-
+const db = require("../db/dbConfig");
 
 const getProducts = async ({ q, category, cost }) => {
   try {
