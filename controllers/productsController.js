@@ -7,8 +7,7 @@ products.get("/", async (req, res) => {
   const { q, category, cost } = req.query;
   const results = await getProducts({ q, category, cost });
   if (results.error) {
-      console.log('error', results.error);
-      res.status(404).json({ error: "No Products Found" });
+      res.status(404).json({ error: results.error });
     } else {
       res.status(200).json(results);
   }
