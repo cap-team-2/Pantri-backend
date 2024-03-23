@@ -20,7 +20,7 @@ products.get("/:id", async (req, res) => {
     if (oneProduct) {
         res.status(200).json(oneProduct);
     } else {
-        res.status(404).json({ error: "Not Found" });
+        res.status(404).json({ error: "Product Not Found" });
     };
 });
 

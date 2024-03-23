@@ -30,8 +30,8 @@ const getProducts = async ({ q, category, cost }) => {
 
     return results;
   } catch (error) {
-    console.error("Error while executing the query:", error);
-    return { error: "An error occurred while fetching the products." };
+    console.error("Error while fetching product:", error);
+    throw error;
   }
 };
 
@@ -96,7 +96,7 @@ const updateProduct = async (id, product) => {
 const deleteProduct = async (id) => {
   try {
     const deletedProduct = await db.one(
-      "DELETE FROM product WHERE id=$1 RETURNING *",
+      "DELETE FROM products WHERE id=$1 RETURNING *",
       [id]
     );
     return deletedProduct;
