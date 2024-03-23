@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS capstone_dev;
-CREATE DATABASE capstone_dev;
+DROP DATABASE IF EXISTS pantri_dev;
+CREATE DATABASE pantri_dev;
 
 \c capstone_dev;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
