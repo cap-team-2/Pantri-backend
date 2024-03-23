@@ -31,7 +31,7 @@ const getProducts = async ({ q, category, cost }) => {
     return results;
   } catch (error) {
     console.error("Error while fetching product:", error);
-    throw error;
+    return { error: "Failed to fetch product" };
   }
 };
 
