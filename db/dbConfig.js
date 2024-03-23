@@ -14,7 +14,8 @@ const cn = DATABASE_URL
     database: PG_DATABASE,
     user: PG_USER,
 };
-
+console.log(process.env.DATABASE_URL);
+console.log(process.env.PG_HOST);
 const db = pgp(cn);
 
 module.exports = db;
