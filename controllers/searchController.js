@@ -6,7 +6,6 @@ searchRouter.get("/", async (req, res) => {
   try {
     const { search, filterBy, value } = req.query;
     const results = await searchDatabase({ search, filterBy, value });
-    console.log(results);
     if (results.length) {
       res.status(200).json(results);
     } else {
