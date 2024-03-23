@@ -6,6 +6,7 @@ const { getProducts, getProduct, createProduct, updateProduct, deleteProduct} = 
 products.get("/", async (req, res) => {
   const { q, category, cost } = req.query;
   const results = await getProducts({ q, category, cost });
+
   if (results.error) {
       res.status(404).json({ error: results.error });
     } else {

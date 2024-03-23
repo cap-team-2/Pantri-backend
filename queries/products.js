@@ -1,37 +1,33 @@
 const db = require("../db/dbConfig");
 
 const getProducts = async ({ q, category, cost }) => {
-  try {
-    let queryString = "SELECT * FROM products";
-    let values = [];
-    let conditions = [];
 
-    if (q) {
-      conditions.push(`name ILIKE $${conditions.length + 1}`);
-      values.push(`%${q}%`);
-    }
+  let queryString = "SELECT * FROM products";
+  let values = [];
+  let conditions = [];
 
-    if (category) {
-      conditions.push(`category ILIKE $${conditions.length + 1}`);
-      values.push(`%${category}%`);
-    }
-
-    if (cost) {
-      conditions.push(`cost <= $${conditions.length + 1}`);
-      values.push(parseFloat(cost));
-    }
-
-    if (conditions.length > 0) {
-      queryString += " WHERE " + conditions.join(" AND ");
-    }
-
-    const results = await db.any(queryString, values);
-
-    return results;
-  } catch (error) {
-    console.error("Error while fetching product:", error);
-    return { error: error };
+  if (q) {
+    conditions.push(`name ILIKE $${conditions.length + 1}`);
+    values.push(`%${q}%`);
   }
+
+  if (category) {
+    conditions.push(`category ILIKE $${conditions.length + 1}`);
+    values.push(`%${category}%`);
+  }
+
+  if (cost) {
+    conditions.push(`cost <= $${conditions.length + 1}`);
+    values.push(parseFloat(cost));
+  }
+
+  if (conditions.length > 0) {
+    queryString += " WHERE " + conditions.join(" AND ");
+  }
+
+  const results = await db.any(queryString, values);
+  return results;
+
 };
 
 const getProduct = async (id) => {
