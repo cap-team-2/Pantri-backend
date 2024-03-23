@@ -1,4 +1,4 @@
-\c capstone_dev;
+\c pantri_dev;
 
 
 INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2, city, zipcode, image, type) VALUES
