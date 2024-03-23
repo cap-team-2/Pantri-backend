@@ -2,6 +2,7 @@ DROP DATABASE IF EXISTS pantri_dev;
 CREATE DATABASE pantri_dev;
 
 \c pantri_dev;
+
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 CREATE TABLE users (
