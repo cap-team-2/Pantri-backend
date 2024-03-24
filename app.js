@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+
 const app = express();
 const userController = require("./controllers/usersController.js");
 const sellersController = require("./controllers/sellersController.js");
@@ -16,6 +17,7 @@ const cartJoinsController = require("./controllers/cartJoinsController.js");
 const commentsController = require("./controllers/commentsController.js")
 const stripe = require("./controllers/stripeConfig.js");
 
+
 app.use(cors());
 app.use(express.json());
 
@@ -23,7 +25,10 @@ app.get("/", (req, res) => {
     res.send("Welcome to Pantri");
 });
 
-// app.use("/config", stripe)
+
+
+
+app.use("/config", stripe)
 app.use("/search", searchController);
 app.use("/users", userController);
 app.use("/sellers", sellersController);
