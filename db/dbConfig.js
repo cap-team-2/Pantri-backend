@@ -16,6 +16,6 @@ const cn = DATABASE_URL
     };
 
 const db = pgp(cn);
-
+console.log(cn);
 module.exports = db;
 
