@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const db = require("./db/dbConfig.js")
 const app = express();
 const userController = require("./controllers/usersController.js");
 const sellersController = require("./controllers/sellersController.js");
@@ -24,23 +25,26 @@ app.get("/", (req, res) => {
     res.send("Welcome to Pantri");
 });
 
+app.get("/products", async (req, res) => {
+    const results = await db.any("SELECT * FROM products")
+    res.status(200).json({results});
 
+});
 
-
-app.use("/config", stripe)
-app.use("/search", searchController);
-app.use("/users", userController);
-app.use("/sellers", sellersController);
-app.use("/products", productsController);
-app.use("/orders", ordersController);
-app.use("/orders-products", ordersProductsController);
-app.use("/user-orders", userOrdersController);
-app.use("/seller-products", sellerProductsController);
-app.use("/joins", joinsController);
-app.use("/shopping-session", shoppingSessionController);
-app.use("/cart-products", cartProductsController);
-app.use("/cart-joins", cartJoinsController);
-app.use("/comments", commentsController);
+// app.use("/config", stripe)
+// app.use("/search", searchController);
+// app.use("/users", userController);
+// app.use("/sellers", sellersController);
+// app.use("/products", productsController);
+// app.use("/orders", ordersController);
+// app.use("/orders-products", ordersProductsController);
+// app.use("/user-orders", userOrdersController);
+// app.use("/seller-products", sellerProductsController);
+// app.use("/joins", joinsController);
+// app.use("/shopping-session", shoppingSessionController);
+// app.use("/cart-products", cartProductsController);
+// app.use("/cart-joins", cartJoinsController);
+// app.use("/comments", commentsController);
 
 app.get("*", (req, res) => {
     res.status(404).json({error: "Not Found!"});
