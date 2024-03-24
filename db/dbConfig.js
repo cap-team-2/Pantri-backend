@@ -16,6 +16,7 @@ const cn = DATABASE_URL
       password: PG_PASSWORD
     };
 
+console.log(DATABASE_URL, PG_HOST, PG_PORT, PG_DATABASE, PG_USER, PG_PASSWORD)
 const db = pgp(cn);
 
 module.exports = db;

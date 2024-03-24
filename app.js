@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-
 const app = express();
 const userController = require("./controllers/usersController.js");
 const sellersController = require("./controllers/sellersController.js");
