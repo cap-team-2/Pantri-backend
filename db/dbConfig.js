@@ -6,14 +6,19 @@ const { DATABASE_URL, PG_HOST, PG_PORT, PG_DATABASE, PG_USER, PG_PASSWORD } = pr
 const cn = DATABASE_URL
   ? {
       connectionString: DATABASE_URL,
-      ssl: { rejectUnauthorized: false }
+      ssl: {
+        rejectUnauthorized: false 
+      }
     }
   : {
       host: PG_HOST,
       port: PG_PORT,
       database: PG_DATABASE,
       user: PG_USER,
-      password: PG_PASSWORD
+      password: PG_PASSWORD,
+      ssl: {
+        rejectUnauthorized: false 
+      }
     };
 
 const db = pgp(cn);
@@ -28,6 +33,7 @@ db.any('SELECT 1')
   });
 
 module.exports = db;
+
 
 // const pgp = require('pg-promise')();
 // require('dotenv').config();
