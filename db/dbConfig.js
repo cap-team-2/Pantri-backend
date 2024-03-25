@@ -9,15 +9,6 @@ const db = pgp({
 
 
 
-// Add error handling
-db.any('SELECT 1')
-  .then(() => {
-    console.log('Database connection successful');
-  })
-  .catch(error => {
-    console.error('Error connecting to the database:', error);
-  });
-
 module.exports = db;
 
 
