@@ -8,6 +8,7 @@ const db = pgp({
   }
 });
 
+console.log(process.env.DATABASE_URL)
 
 
 module.exports = db;
