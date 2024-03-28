@@ -65,14 +65,13 @@ CREATE TABLE orders_products (
 CREATE TABLE shopping_session (
     id SERIAL PRIMARY KEY,
     user_id UUID NOT NULL REFERENCES users(id),
-    total DECIMAL(10,2) NOT NULL CHECK (total >= 0),
-    created_at TEXT NOT NULL
 );
 
 CREATE TABLE cart_products (
-    cart_id SERIAL PRIMARY KEY,
-    session_id INTEGER NOT NULL REFERENCES shopping_session(id),
+    id SERIAL PRIMARY KEY,
     product_id UUID NOT NULL REFERENCES products(id) UNIQUE,
     quantity INTEGER NOT NULL CHECK (quantity >= 0)
+    total DECIMAL(10,2) NOT NULL CHECK (total >= 0),
+    created_at TEXT NOT NULL
 );
 
