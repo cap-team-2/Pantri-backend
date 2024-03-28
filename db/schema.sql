@@ -22,57 +22,18 @@ CREATE TABLE users (
 CREATE TABLE products (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     seller_id UUID NOT NULL REFERENCES users (id),
-    -- rating UUID REFERENCES ratings (id),
-    -- comments UUID REFERENCES comments (id),
     name TEXT NOT NULL,
     image TEXT NOT NULL,
     cost DECIMAL(10,2) NOT NULL CHECK (cost >= 0),
     weight DECIMAL(6,2) CHECK (weight >= 0),
     unit_measurement TEXT,
-    category TEXT NOT NULL,
-    description TEXT,
-    stock INTEGER NOT NULL CHECK (stock >= 0)
-);
-
-CREATE TABLE ratings (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    user_id UUID NOT NULL REFERENCES users (id),
-    product_id UUID NOT NULL REFERENCES products(id),
-    rating INTEGER CHECK (rating >= 0 AND rating <= 5)
-);
-
-CREATE TABLE comments (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    user_id UUID NOT NULL REFERENCES users (id),
-    product_id UUID NOT NULL REFERENCES products(id),
-    comment TEXT
-);
-
-CREATE TABLE orders (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY, 
-    user_id UUID NOT NULL REFERENCES users (id),
-    total DECIMAL(10,2) NOT NULL CHECK (total >= 0),
-    order_placed_at TEXT NOT NULL
-); 
-
-CREATE TABLE orders_products (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY, 
-    order_id UUID NOT NULL REFERENCES orders(id),
-    product_id UUID NOT NULL REFERENCES products(id),
-    quantity INTEGER NOT NULL CHECK (quantity >= 0)
-);
-
-CREATE TABLE shopping_session (
-    id SERIAL PRIMARY KEY,
-    user_id UUID NOT NULL REFERENCES users(id),
-    total DECIMAL(10,2) NOT NULL CHECK (total >= 0),
-    created_at TEXT NOT NULL
 );
 
 CREATE TABLE cart_products (
-    cart_id SERIAL PRIMARY KEY,
-    session_id INTEGER NOT NULL REFERENCES shopping_session(id),
+    id SERIAL PRIMARY KEY,
     product_id UUID NOT NULL REFERENCES products(id) UNIQUE,
-    quantity INTEGER NOT NULL CHECK (quantity >= 0)
+    quantity INTEGER NOT NULL CHECK (quantity >= 0),
+    total DECIMAL(10,2) NOT NULL CHECK (total >= 0),
+    created_at TEXT NOT NULL
 );
 
