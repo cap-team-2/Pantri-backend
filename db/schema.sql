@@ -32,7 +32,7 @@ CREATE TABLE products (
 CREATE TABLE cart_products (
     id SERIAL PRIMARY KEY,
     product_id UUID NOT NULL REFERENCES products(id) UNIQUE,
-    quantity INTEGER NOT NULL CHECK (quantity >= 0)
+    quantity INTEGER NOT NULL CHECK (quantity >= 0),
     total DECIMAL(10,2) NOT NULL CHECK (total >= 0),
     created_at TEXT NOT NULL
 );
