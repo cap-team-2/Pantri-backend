@@ -26,7 +26,10 @@ CREATE TABLE products (
     image TEXT NOT NULL,
     cost DECIMAL(10,2) NOT NULL CHECK (cost >= 0),
     weight DECIMAL(6,2) CHECK (weight >= 0),
-    unit_measurement TEXT
+    unit_measurement TEXT,
+    category TEXT NOT NULL,
+    description TEXT NOT NULL,
+    stock INTEGER NOT NULL CHECK (stock >= 0)
 );
 
 CREATE TABLE cart (
