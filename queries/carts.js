@@ -22,8 +22,8 @@ const getCart = async (cart_id) => {
 const createCart = async (cart) => {
     try {
         const newCart = await db.one(
-            "INSERT INTO cart (user_id, products, quantity) VALUES($1, $2, $3) RETURNING *",
-            [ cartProduct.session_id, cartProduct.product_id, cartProduct.quantity ]
+            "INSERT INTO cart (user_id, products, quantity, total, created_at) VALUES($1, $2, $3, $4, $5) RETURNING *",
+            [ cart.user_id, cart.products, cart.quantity, cart.total, cart.created_at ]
         );
         return newCart;
     } catch (error) {
@@ -34,8 +34,8 @@ const createCart = async (cart) => {
 const updateCart = async (cart_id, cart) => {
     try {
         const updatedCart = await db.one(
-            "UPDATE carts SET quantity=$1 WHERE id=$2 RETURNING *",
-            [cartProduct.quantity, cart_id]
+            "UPDATE carts SET products=$1, quantity=$2, total=$3, WHERE id=$4 RETURNING *",
+            [cart.products, cart.quantity, cart.total, cart_id]
         );
         return updatedCart;
     } catch (error) {
