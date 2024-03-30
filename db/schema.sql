@@ -32,7 +32,7 @@ CREATE TABLE products (
     stock INTEGER NOT NULL CHECK (stock >= 0)
 );
 
-CREATE TABLE cart (
+CREATE TABLE carts (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     user_id UUID NOT NULL REFERENCES users(id) UNIQUE,
     products JSON NOT NULL, 

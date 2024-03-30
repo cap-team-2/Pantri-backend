@@ -1,8 +1,8 @@
 const db = require("../db/dbConfig.js");
 
-const getCartProducts = async () => {
+const getCarts = async () => {
     try {
-        const allCartProducts = await db.any("SELECT * FROM cart_products");
+        const allCartProducts = await db.any("SELECT * FROM carts");
         return allCartProducts;
     } catch (error) {
         return {error: error};
