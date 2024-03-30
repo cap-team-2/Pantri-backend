@@ -1,61 +1,61 @@
 const db = require("../db/dbConfig.js");
 
-const getCartProducts = async () => {
+const getAllCarts = async () => {
     try {
-        const allCartProducts = await db.any("SELECT * FROM cart_products");
-        return allCartProducts;
+        const allCarts = await db.any("SELECT * FROM carts");
+        return allCarts;
     } catch (error) {
         return {error: error};
     };
 };
 
-const getCartProduct = async (cart_id) => {
+const getCart = async (cart_id) => {
     try {
-        const cartProduct = await db.oneOrNone("SELECT * FROM cart_products WHERE id=$1", cart_id);
-        return cartProduct;
+        const cart = await db.oneOrNone("SELECT * FROM carts WHERE id=$1", cart_id);
+        return cart;
     } catch (error) {
         return {error: error};
     };
 };
 
 
-const createCartProduct = async (cartProduct) => {
+const createCart = async (cart) => {
     try {
-        const newCartProduct = await db.one(
-            "INSERT INTO cart_products (session_id, product_id, quantity) VALUES($1, $2, $3) RETURNING *",
+        const newCart = await db.one(
+            "INSERT INTO cart (user_id, products, quantity) VALUES($1, $2, $3) RETURNING *",
             [ cartProduct.session_id, cartProduct.product_id, cartProduct.quantity ]
         );
-        return newCartProduct;
+        return newCart;
     } catch (error) {
         return {error: error};
     };
 };
 
-const updateCartProduct = async (cart_id, cartProduct) => {
+const updateCart = async (cart_id, cart) => {
     try {
-        const updatedUser = await db.one(
-            "UPDATE cart_products SET quantity=$1 WHERE id=$2 RETURNING *",
+        const updatedCart = await db.one(
+            "UPDATE carts SET quantity=$1 WHERE id=$2 RETURNING *",
             [cartProduct.quantity, cart_id]
         );
-        return updatedUser;
+        return updatedCart;
     } catch (error) {
         return {error: error};
     };
 };
 
-const deleteCartProduct = async (cart_id) => {
+const deleteCart = async (cart_id) => {
     try {
-        const deletedUser = await db.one("DELETE FROM cart_products WHERE id=$1 RETURNING *", [cart_id]);
-        return deletedUser;
+        const deletedCart = await db.one("DELETE FROM carts WHERE id=$1 RETURNING *", [cart_id]);
+        return deletedCart;
     } catch (error) {
         return {error: error};
     };
 };
 
 module.exports = {
-    getCartProducts,
-    getCartProduct,
-    createCartProduct,
-    updateCartProduct,
-    deleteCartProduct,
+    getAllCarts,
+    getCart,
+    createCart,
+    updateCart,
+    deleteCart
 }

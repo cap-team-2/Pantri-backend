@@ -27,11 +27,15 @@ CREATE TABLE products (
     cost DECIMAL(10,2) NOT NULL CHECK (cost >= 0),
     weight DECIMAL(6,2) CHECK (weight >= 0),
     unit_measurement TEXT,
+    category TEXT NOT NULL,
+    description TEXT NOT NULL,
+    stock INTEGER NOT NULL CHECK (stock >= 0)
 );
 
-CREATE TABLE cart_products (
-    id SERIAL PRIMARY KEY,
-    product_id UUID NOT NULL REFERENCES products(id) UNIQUE,
+CREATE TABLE carts (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    user_id UUID NOT NULL REFERENCES users(id) UNIQUE,
+    products JSON NOT NULL, 
     quantity INTEGER NOT NULL CHECK (quantity >= 0),
     total DECIMAL(10,2) NOT NULL CHECK (total >= 0),
     created_at TEXT NOT NULL
