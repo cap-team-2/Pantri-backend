@@ -29,9 +29,10 @@ CREATE TABLE products (
     unit_measurement TEXT
 );
 
-CREATE TABLE cart_products (
-    id SERIAL PRIMARY KEY,
-    product_id UUID NOT NULL REFERENCES products(id) UNIQUE,
+CREATE TABLE cart (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    user_id UUID NOT NULL REFERENCES users(id) UNIQUE,
+    products JSON NOT NULL, 
     quantity INTEGER NOT NULL CHECK (quantity >= 0),
     total DECIMAL(10,2) NOT NULL CHECK (total >= 0),
     created_at TEXT NOT NULL
