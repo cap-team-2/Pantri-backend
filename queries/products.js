@@ -65,20 +65,20 @@ const createProduct = async (product) => {
   }
 };
 
-const updateProduct = async (id, product) => {
+const updateProduct = async (id, products) => {
   try {
     const updatedProduct = await db.one(
       "UPDATE products SET seller_id=$1, name=$2, image=$3, cost=$4, weight=$5, unit_measurement=$6, category=$7, description=$8, stock=$9 WHERE id=$10 RETURNING *",
       [
-        product.seller_id,
-        product.name,
-        product.image,
-        product.cost,
-        product.weight,
-        product.unit_measurement,
-        product.category,
-        product.description,
-        product.stock,
+        products.seller_id,
+        products.name,
+        products.image,
+        products.cost,
+        products.weight,
+        products.unit_measurement,
+        products.category,
+        products.description,
+        products.stock,
         id,
       ]
     );
