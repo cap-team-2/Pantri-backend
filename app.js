@@ -9,8 +9,6 @@ const userOrdersController = require("./controllers/userOrdersController.js");
 const sellerProductsController = require("./controllers/sellerProductsController.js");
 const searchController = require("./controllers/searchController.js");
 const shoppingSessionController = require("./controllers/shoppingSessionController.js");
-const cartProductsController = require("./controllers/cartProductsController.js");
-const cartJoinsController = require("./controllers/cartJoinsController.js");
 
 app.use(cors());
 app.use(express.json());
@@ -28,8 +26,6 @@ app.use("/orders", ordersController);
 app.use("/user-orders", userOrdersController);
 app.use("/seller-products", sellerProductsController);
 app.use("/shopping-session", shoppingSessionController);
-app.use("/cart-products", cartProductsController);
-app.use("/cart-joins", cartJoinsController);
 
 
 app.get("*", (req, res) => {
