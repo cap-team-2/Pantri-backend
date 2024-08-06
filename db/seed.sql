@@ -96,7 +96,7 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
 'New York',
 '14580',
 '',
-'buyer' 
+'buyer'
 ),
 ('08b42780-59a2-11ee-8c99-0242ac120002',
 'Mya',
@@ -108,7 +108,7 @@ INSERT INTO users (id, first_name, last_name, email, phone, address_1, address_2
 'New York',
 '14127',
 'https://www.cam.ac.uk/sites/www.cam.ac.uk/files/styles/content-885x432/public/news/research/features/251017indian-farmer-in-biharm.defreesecimmyt.jpg?itok=l61sULc4',
-'seller' 
+'seller'
 ),
 ('055038a8-59a3-11ee-8c99-0242ac120002',
 'Bob',
@@ -154,7 +154,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Vegetables',
 'Cauliflower',
 '15'),
-('ef81a5a2-b012-45e2-8754-8539c32de3b2', 
+('ef81a5a2-b012-45e2-8754-8539c32de3b2',
 '535c2d7e-c78b-47f3-b2c3-ab109f908dc5',
 'quail eggs',
 'https://jacobsheritagefarm.com/wp-content/uploads/2014/08/bigstock-Quail-Eggs-On-Wooden-Backgroun-59882948.jpg',
@@ -231,7 +231,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Whole Watermelon',
 '20'
 ),
-('c4cf3176-8d65-48bc-93b7-888505179ea4', 
+('c4cf3176-8d65-48bc-93b7-888505179ea4',
 '9e6ef4fb-5574-4968-912a-ea28257d708e',
 'blueberry',
 'https://images.unsplash.com/photo-1445628680538-19da88adb5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80',
@@ -283,17 +283,17 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 '2.22',
 'lb',
 'Fruits',
-'Bundle Of Green Grapes', 
+'Bundle Of Green Grapes',
 '50'
 ),
-('94a3c367-863e-4ed2-bbf1-91e848d038c6', 
+('94a3c367-863e-4ed2-bbf1-91e848d038c6',
 '08b42780-59a2-11ee-8c99-0242ac120002',
 'black grapes',
 'https://images.unsplash.com/photo-1504868173-db962b7c3757?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80',
 '4.68',
 '2.22',
 'lb',
-'Fruits', 
+'Fruits',
 'Bundle Of Black Grapes',
 '50'
 ),
@@ -483,7 +483,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Vegetables',
 'Mushroom',
 '35'
-), 
+),
 ('91dd51c2-5316-11ee-be56-0242ac120002',
 '391adfb9-d5fa-4c4b-85ac-43b1a92d838b',
 'tomatoes',
@@ -593,7 +593,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Vegetables',
 'Bundle Of Fresh Spinach',
 '100'
-), 
+),
 ('03b94bd8-80bc-4e58-8f19-30b6b5279b67',
 '535c2d7e-c78b-47f3-b2c3-ab109f908dc5',
 'kale',
@@ -733,8 +733,8 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Red Bell Peppers',
 '50'
 ),
-('e1fb5b41-ba64-44d4-923d-308b462151aa', 
-'055038a8-59a3-11ee-8c99-0242ac120002', 
+('e1fb5b41-ba64-44d4-923d-308b462151aa',
+'055038a8-59a3-11ee-8c99-0242ac120002',
 'Djon Djon Mushroom',
 'https://tchakayiti.com/home/wp-content/uploads/2014/03/djondjon-haiti-wild-mushroom-tchakayiti.jpg',
 '14.99',
@@ -754,7 +754,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Yellow Bell Peppers',
 '50'
 ),
-('5b747b3d-f5ad-4af9-b787-050e8fa16dbe', 
+('5b747b3d-f5ad-4af9-b787-050e8fa16dbe',
 'bf83f4e0-530d-11ee-be56-0242ac120002',
 'orange Bell peppers',
 'https://mattspatch.com/cdn/shop/products/OrangeBell_4e7ca251-e718-4b5c-9e87-f8a202922af2_300x300.jpg?v=1677986614',
@@ -822,7 +822,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 ('515b29c7-5647-48bf-9102-030e8fec7f2c',
 'bf83f4e0-530d-11ee-be56-0242ac120002',
 'turkey',
-'https://www.realsimple.com/thmb/8Vfov7k1dfir5JJ3tQVS-SOijWw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/when-to-buy-a-thanksgiving-turkey-realsimple-GettyImages-1042438108-067155736c7c4015bb25c3e2fc949a61.jpg',
+'https://kuckfarms.com/wp-content/uploads/2016/01/fresh_turkey.jpg',
 '30',
 '20',
 'lb',
@@ -851,7 +851,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
  'meat',
  'Fresh Whole Cornish Hen',
  '12'
- ), 
+ ),
  ('21b26024-59a4-11ee-8c99-0242ac120002',
   '055038a8-59a3-11ee-8c99-0242ac120002',
   'romaine lettuce',
@@ -862,7 +862,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
   'Vegetables',
   'Crispy Crunchy Green Romaine Lettuce',
   '100'
- ), 
+ ),
  ('efdc2fe4-5ca5-11ee-8c99-0242ac120002',
   '08b42780-59a2-11ee-8c99-0242ac120002',
   'Homestyle Sweet Potato Pie',
@@ -874,7 +874,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
   'A family Recipe, Made From Tasty Sweet Potatoes',
   '9'
  ),
- ('0f98dd45-8b48-49a3-91af-c20f5beaef46', 
+ ('0f98dd45-8b48-49a3-91af-c20f5beaef46',
  '08b42780-59a2-11ee-8c99-0242ac120002',
  'Homestyle Apple Pie',
  'https://cdn11.bigcommerce.com/s-7ktwhbi/images/stencil/1024x1024/products/76/292/1038_MamaJos_0034__80002.1414084442.jpg?c=2',
@@ -907,7 +907,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Homemade Cheesecake',
 '10'
  ),
- ('22a03262-5cac-11ee-8c99-0242ac120002', 
+ ('22a03262-5cac-11ee-8c99-0242ac120002',
  '055038a8-59a3-11ee-8c99-0242ac120002',
  'mackerel',
  'https://harborfish.com/wp-content/uploads/2021/07/Mackerel2-scaled.jpeg',
@@ -918,7 +918,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
  'Fresh Whole Mackerel',
  '20'
  ),
- ('a0e56984-5cad-11ee-8c99-0242ac120002', 
+ ('a0e56984-5cad-11ee-8c99-0242ac120002',
  '055038a8-59a3-11ee-8c99-0242ac120002',
  'porgies',
  'https://www.citarella.com/media/catalog/product/cache/6bd6bc90948058f1c179c773d53c57be/image/1134f13/porgies-whole.jpg',
@@ -929,7 +929,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
  'Fresh Whole Porgy',
  '10'
  ),
- ('eb003c76-5cb5-11ee-8c99-0242ac120002', 
+ ('eb003c76-5cb5-11ee-8c99-0242ac120002',
  '055038a8-59a3-11ee-8c99-0242ac120002',
  'tuna',
  'https://5.imimg.com/data5/SELLER/Default/2023/5/307448579/LP/LE/RU/189552148/new-product-250x250.jpeg',
@@ -961,8 +961,8 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
  'seafood',
  'Fresh Dozen Little Neck Clams',
  '24'
- ), 
- ('4aee0c4a-5cba-11ee-8c99-0242ac120002', 
+ ),
+ ('4aee0c4a-5cba-11ee-8c99-0242ac120002',
  '055038a8-59a3-11ee-8c99-0242ac120002',
  'blackfish',
  'https://www.citarella.com/media/catalog/product/cache/6bd6bc90948058f1c179c773d53c57be/image/467cd/blackfish-whole.jpg',
@@ -973,7 +973,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
  'Freshly Caught BlackFish',
  '20'
  ),
-('9ceca7f8-5cbb-11ee-8c99-0242ac120002', 
+('9ceca7f8-5cbb-11ee-8c99-0242ac120002',
 '08b42780-59a2-11ee-8c99-0242ac120002',
 'roses',
 'https://cdn.financebuzz.com/images/2023/01/20/roses.jpg',
@@ -989,13 +989,13 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
  'sunflower',
  'https://www.instacart.com/image-server/932x932/filters:fill(FFF,true):format(webp)/www.instacart.com/assets/domains/product-image/file/large_34eeffdd-8eda-4f72-921e-3ced9e6eb30c.jpg',
  '9.89',
- '1', 
- 'lb', 
+ '1',
+ 'lb',
  'flowers',
  'Lovely bright yellow Sunflowers',
  '100'
  ),
-('1f28933b-af8f-4fd7-8c96-a54ab89dc6c2', 
+('1f28933b-af8f-4fd7-8c96-a54ab89dc6c2',
 '08b42780-59a2-11ee-8c99-0242ac120002',
 'bouquet',
 'https://fyf.tac-cdn.net/images/products/large/FYF-893.jpg?auto=webp&quality=80&width=690',
@@ -1006,18 +1006,18 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Assorted Flowers That Make Up a Bouquet',
 '20'
 ),
-('8e51d654-bfd6-423f-ae56-aaa09bccad55', 
+('8e51d654-bfd6-423f-ae56-aaa09bccad55',
 '08b42780-59a2-11ee-8c99-0242ac120002',
 'pink roses',
-'https://www.flowerchimp.com.ph/cdn/shop/products/PH_001_600x.jpg?v=1635836591', 
+'https://www.flowerchimp.com.ph/cdn/shop/products/PH_001_600x.jpg?v=1635836591',
 '12.99',
 '1',
 'lb',
 'flowers',
 'A Dozen Pretty Pink Roses',
 '20'
-), 
-('69d85b56-5cbf-11ee-8c99-0242ac120002', 
+),
+('69d85b56-5cbf-11ee-8c99-0242ac120002',
 '9e6ef4fb-5574-4968-912a-ea28257d708e',
 'biscuit',
 'https://www.seriouseats.com/thmb/irRrCdS7c5Fehzr9oCD5nTs84Dc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20210510-The-Food-Labs-Buttermilk-Biscuits-liz-voltz-seriouseats-16-8a0c924e4c9440088e073c67ed77d3c1.jpg',
@@ -1027,7 +1027,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'bakery',
 '4 Counts of Freshly Homemade Buttermilk Biscuits',
 '40'
-), 
+),
 ('c6b445b5-dd04-436e-a8bf-fb93de87e80e',
 '08b42780-59a2-11ee-8c99-0242ac120002',
 'peanutbutter cookie',
@@ -1038,8 +1038,8 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'bakery',
 'Fresh Peanut Butter Cookies',
 '50'
-), 
-('60f22ffc-5cc0-11ee-8c99-0242ac120002', 
+),
+('60f22ffc-5cc0-11ee-8c99-0242ac120002',
 '08b42780-59a2-11ee-8c99-0242ac120002',
 'loaf of bread',
 'https://www.theflavorbender.com/wp-content/uploads/2019/02/Homemade-Bread-7873-700x1049.jpg',
@@ -1050,7 +1050,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Freshly Made Loaf Of Bread',
 '15'
 ),
-('f5a5bc8a-1135-4873-95c4-a48108b8f961', 
+('f5a5bc8a-1135-4873-95c4-a48108b8f961',
 '535c2d7e-c78b-47f3-b2c3-ab109f908dc5',
 'chocolate cookies',
 'https://images-gmi-pmc.edge-generalmills.com/087d17eb-500e-4b26-abd1-4f9ffa96a2c6.jpg',
@@ -1061,7 +1061,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Freshly Baked Chocolate Chip Cookies',
 '50'
 ),
-('d10011c4-5cc5-11ee-8c99-0242ac120002', 
+('d10011c4-5cc5-11ee-8c99-0242ac120002',
 '055038a8-59a3-11ee-8c99-0242ac120002',
 'almond',
 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTVxbGqYv3Qgdgil-AMPRapbu1Hakls7i4PlJyHa90X-DwXZGkCKP8fAqrYyAjiyjc84qhTPFyYNG1AQ90',
@@ -1072,7 +1072,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Pouch Of Almonds',
 '50'
 ),
-('b0bb6139-5663-48fb-8dc6-821eb11b603c', 
+('b0bb6139-5663-48fb-8dc6-821eb11b603c',
 '055038a8-59a3-11ee-8c99-0242ac120002',
 'chickpea',
 'https://wholefully.com/wp-content/uploads/2011/03/img_8150-720x540.jpg',
@@ -1083,7 +1083,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Dried Chickpeas',
 '50'
 ),
-('1874a008-e479-47a7-a57f-54e109a357ac', 
+('1874a008-e479-47a7-a57f-54e109a357ac',
 '391adfb9-d5fa-4c4b-85ac-43b1a92d838b',
 'tofu',
 'https://sarahsvegankitchen.b-cdn.net/wp-content/uploads/2022/12/homemade-tofu-2-scaled.jpg',
@@ -1105,7 +1105,7 @@ INSERT INTO products (id, seller_id, name, image, cost, weight, unit_measurement
 'Healthy Homemade Vegan Potato Chips',
 '30'
 ),
-('53a5a82a-950d-40df-b974-e60b8b20bc21', 
+('53a5a82a-950d-40df-b974-e60b8b20bc21',
 '391adfb9-d5fa-4c4b-85ac-43b1a92d838b',
 'tempeh',
 'https://www.liveeatlearn.com/wp-content/uploads/2019/01/tempeh-photo-vert.jpg',
@@ -1144,12 +1144,9 @@ INSERT INTO orders_products (id, order_id, product_id, quantity) VALUES
 '908adff5-351d-471e-8296-6c6e1c82b9be',
 '7');
 
-INSERT INTO shopping_session (id, user_id, total, created_at) VALUES 
+INSERT INTO shopping_session (id, user_id, total, created_at) VALUES
 ('1',
 '9e6ef4fb-5574-4968-912a-ea28257d708e',
 '120',
 'here'
 );
-
-
-
